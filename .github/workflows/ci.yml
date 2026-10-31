@@ -12,7 +12,7 @@ jobs:
   runbook-integrity:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Главы и журнал на месте
         run: |
           test -s README.md
