@@ -15,7 +15,7 @@
 | ДНК агентов | `AGENTS.md` | императивный контракт: карта репо, команды, DO NOT, Definition of Done |
 | Самовоскрешение | `RESTORE.md` | 5 команд из bundle + где взять bundle + ключевые точки |
 | Иммунитет | `.github/dependabot.yml` | недельные обновления github-actions-зависимостей |
-| Размножение | `.github/workflows/bundle-backup.yml` | cron пн 03:00 UTC → artifact, хранение 90 дней |
+| Размножение | `.github/workflows/bundle-backup.yml` | cron пн 03:00 UTC → artifact, хранение 90 дней (live: dispatch 204, зелёный run, bundle-артефакты — SOURCES A-21…A-23) |
 | Ритм релизов | `.github/workflows/release.yml` | тег `v*` → Release с автозаметками (расширение — с zip) |
 | Нервная система | `.github/ISSUE_TEMPLATE/` | дефект / идея / дефект верификации |
 
@@ -36,8 +36,9 @@
 - Actions-минуты приватных репо: 2000/мес; cron-бэкап тратит ~1 мин/нед — запас 40-кратный.
 - Ручной тест бэкапа (`workflow_dispatch`) требует токен с правом **Actions: write**:
   без него `POST …/dispatches` → 403 «Resource not accessible by personal access
-  token» (SOURCES A-17). Плановый cron выполняет сам GitHub; подтверждение —
-  понедельник 03:00 UTC во вкладке Actions.
+  token» (SOURCES A-17); с ним — **204, и бэкап отработал зелёным во всех четырёх
+  репо** с bundle-артефактами на 90 дней (SOURCES A-21…A-23). Плановый cron
+  выполняет сам GitHub.
 
 ## Смерть носителя ≠ смерть дела
 

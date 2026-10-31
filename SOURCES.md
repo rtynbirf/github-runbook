@@ -26,6 +26,10 @@
 | A-17 | Ручной тест бэкапа | `POST /repos/{repo}/actions/workflows/bundle-backup.yml/dispatches` | **403 × 4** «Resource not accessible by personal access token» | у текущего PAT нет права Actions:write — dispatch только с ним. Плановый cron запускает сам GitHub (первая живая проверка — пн 03:00 UTC во вкладке Actions) |
 | A-18 | Workflows на удалёнке | `GET /repos/{repo}/contents/.github/workflows?ref=main` | **200 × 4** | `ci.yml` + `bundle-backup.yml` + `release.yml` на main во всех репо (+ чужие `selftest.yml`, `guardian-tripwire.yml` целы) |
 | A-19 | Локальная репетиция CI | `scripts/local-ci-rehearsal.sh` (шаги один-в-один из ci.yml) | зелёный × 4 | PAC «ВСЕ PAC-ТЕСТЫ ЗЕЛЁНЫЕ»; CSV 42/40/27/41 строк, 0 брака; каркас 6 эпох; ранбук: главы+карта+журнал; живых токенов в md нет |
+| A-20 | Реестр workflows | `GET /repos/{repo}/actions/workflows` | **200 × 4** (токен с правом Actions) | во всех репо state=active: `ci`, `bundle-backup`, `release` (+ чужие `selftest`, `guardian-tripwire` целы); в каждом поднялся авто-workflow «Dependabot Updates» — dependabot.yml принят платформой |
+| A-21 | Ручной запуск бэкапа (PAT с Actions:write) | `POST /repos/{repo}/actions/workflows/bundle-backup.yml/dispatches` | **204 × 4** | cron-канал жив: GitHub принял dispatch на ref=main |
+| A-22 | Итоги запусков Actions | `GET /repos/{repo}/actions/runs` | success — все запуски | в каждом репо: `ci` (push и PR) success, `bundle-backup` #1 success (2026-10-31 20:55–20:56 UTC); также success: `selftest` (cell65-host), чужой `guardian-tripwire` (windows-full-report), авто-Dependabot × 4 |
+| A-23 | Bundle-артефакты | `GET /repos/{repo}/actions/artifacts` | **200 × 4, total_count=1** | `git-bundle-<репо>-…`: 26–447 КБ, истекают 2027-01-29 (= 90 дней — retention подтверждён live) |
 
 **Дословное тело 403 (A-14):**
 
@@ -75,4 +79,4 @@
 таблицу A). Скрипт настройки: `scripts/setup-repos.sh` (в локальном хранилище сессии).
 Скрипты сессии 01.11.2026 (пакет автономности): `push-autonomy.sh` (ff-дисциплина),
 `verify-autonomy.sh`, `probe-perms.sh` (зонд прав PAT), `local-ci-rehearsal.sh`,
-`contents-verify.sh` — там же.
+`contents-verify.sh`, `artifacts-check.sh` (проверка bundle-артефактов) — там же.
