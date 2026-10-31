@@ -31,7 +31,7 @@ push protection блокирует пуш, содержащий живой се�
 - Токен живёт в `/tmp`, права 600, **в командной строке его нет** — только ссылка на файл:
 
 ```bash
-# WRONG: curl -H "Authorization: Bearer github_pat_XXXX" ...   ← токен в истории shell
+# WRONG: curl -H "Authorization: Bearer github_pat_ПРИМЕР" ...   ← токен в истории shell
 # RIGHT:
 curl -H @/tmp/.ghhdr https://api.github.com/user
 ```

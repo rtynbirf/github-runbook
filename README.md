@@ -21,6 +21,7 @@ GitHub после создания репозитория предлагает ~
 | `04-bezopasnost.md` | Dependabot, secret scanning, гигиена токенов |
 | `05-api-shpargalka.md` | Проверенные curl-команды на каждый пункт настройки |
 | `06-poryadok-i-backapy.md` | Теги, релизы, bundle-бэкапы, правило «всё в репе» |
+| `07-organizm-avtonomnost.md` | Органы автономности: CI, AGENTS.md, RESTORE, cron-бэкапы, релизы, issues |
 | `SOURCES.md` | Журнал верификации: живые API-тесты и веб-источники |
 
 ## Быстрый путь: 15 минут на новый репозиторий

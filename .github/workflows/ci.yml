@@ -1,0 +1,28 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  runbook-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Главы и журнал на месте
+        run: |
+          test -s README.md
+          for f in 01-sozdanie-repo.md 02-flagi-settings.md 03-vetki-i-zashchita.md 04-bezopasnost.md 05-api-shpargalka.md 06-poryadok-i-backapy.md 07-organizm-avtonomnost.md SOURCES.md; do
+            test -s "$f" || { echo "ПУСТ/ОТСУТСТВУЕТ: $f"; exit 1; }
+          done
+          grep -q '07-organizm' README.md || { echo 'карта README не знает главу 07'; exit 1; }
+          grep -q 'A-01' SOURCES.md
+          echo "ранбук цел: 8 файлов + карта + журнал"
+      - name: Без следов-заглушек и живых токенов в примерах
+        run: |
+          ! grep -rn -e 'TODO' -e '【' --include='*.md' .
+          ! grep -rnE 'github_pat_[A-Za-z0-9]{40,}' --include='*.md' .
