@@ -22,6 +22,10 @@
 | A-13 | Security fixes × 3 | `PUT /repos/{repo}/automated-security-fixes` | **204 × 3** | активны |
 | A-14 | Branch protection × 3 | `PUT /repos/{repo}/branches/main/protection` | **403 × 3** | гейт тарифа, цитата тела ответа ниже |
 | A-15 | Контрольный GET cell65-host | `GET /repos/rtynbirf/cell65-host` | 200 | private=True, 11 топиков, флаги подтверждены |
+| A-16 | Пуш пакета автономности × 4 | `git fetch` + `rev-list --left-right --count` → rebase/ff → `git push` | cell65-host: расхождение 1/5 → rebase (впитаны 5 чужих коммитов) → push `72dfcf4`; остальные — ff-push `2a0b9f8`, `0e1c18a`, `d0e3a02`; после пуша 0/0 × 4 | пакет на main всех репо; чужая история не тронута, force-push не применялся |
+| A-17 | Ручной тест бэкапа | `POST /repos/{repo}/actions/workflows/bundle-backup.yml/dispatches` | **403 × 4** «Resource not accessible by personal access token» | у текущего PAT нет права Actions:write — dispatch только с ним. Плановый cron запускает сам GitHub (первая живая проверка — пн 03:00 UTC во вкладке Actions) |
+| A-18 | Workflows на удалёнке | `GET /repos/{repo}/contents/.github/workflows?ref=main` | **200 × 4** | `ci.yml` + `bundle-backup.yml` + `release.yml` на main во всех репо (+ чужие `selftest.yml`, `guardian-tripwire.yml` целы) |
+| A-19 | Локальная репетиция CI | `scripts/local-ci-rehearsal.sh` (шаги один-в-один из ci.yml) | зелёный × 4 | PAC «ВСЕ PAC-ТЕСТЫ ЗЕЛЁНЫЕ»; CSV 42/40/27/41 строк, 0 брака; каркас 6 эпох; ранбук: главы+карта+журнал; живых токенов в md нет |
 
 **Дословное тело 403 (A-14):**
 
@@ -55,6 +59,10 @@
    приватное репо»: classic protection и rulesets на Pro enforce'ятся; «Restrict who
    can push» — только для организаций Team/Enterprise.
    URL: https://github.com/orgs/community/discussions/209198
+6. **GitHub CLI — `gh release create`**: флаг `--generate-notes` — дословно:
+   «Automatically generate title and notes for the release via GitHub Release Notes
+   API» (используется в release.yml всех репо).
+   URL: https://cli.github.com/manual/gh_release_create (проверено fetch-ем 01.11.2026)
 
 ## C. Что в мануале НЕ считается проверенным
 
@@ -65,3 +73,6 @@
 
 Полный вывод настройки: `/tmp/setup-log.txt` (живёт в сессии; содержимое свернуто в
 таблицу A). Скрипт настройки: `scripts/setup-repos.sh` (в локальном хранилище сессии).
+Скрипты сессии 01.11.2026 (пакет автономности): `push-autonomy.sh` (ff-дисциплина),
+`verify-autonomy.sh`, `probe-perms.sh` (зонд прав PAT), `local-ci-rehearsal.sh`,
+`contents-verify.sh` — там же.

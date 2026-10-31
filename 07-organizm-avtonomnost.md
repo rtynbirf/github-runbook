@@ -34,6 +34,10 @@
   в AGENTS.md + tripwire-антифорс (появился у чужого агента в windows-full-report)
   + bundle-ритуал.
 - Actions-минуты приватных репо: 2000/мес; cron-бэкап тратит ~1 мин/нед — запас 40-кратный.
+- Ручной тест бэкапа (`workflow_dispatch`) требует токен с правом **Actions: write**:
+  без него `POST …/dispatches` → 403 «Resource not accessible by personal access
+  token» (SOURCES A-17). Плановый cron выполняет сам GitHub; подтверждение —
+  понедельник 03:00 UTC во вкладке Actions.
 
 ## Смерть носителя ≠ смерть дела
 
