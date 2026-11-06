@@ -1,0 +1,167 @@
+name: "ПУЛЬС-1 — корневая кардиограмма аккаунта"
+
+# PID1: корневой процесс. Каждый публичный репозиторий сам пишет свой PULSE.md
+# (воркфлоу self-audit.yml, пн 04:17 UTC), а этот корень раз в неделю собирает
+# кардиограммы детей в один журнал — ПУЛЬС-1.md. Дети читаются shallow-клоном
+# по https (без API-ключей, без rate-limit). Приватные репо изолированному
+# раннеру недоступны — честное ограничение. Список детей самонесущий: свежий
+# через API, при отказе — из машиночитаемого блока предыдущего ПУЛЬС-1.md.
+
+on:
+  schedule:
+    - cron: "47 5 * * 1"  # дети измеряются в 04:17, корень в 05:47 — запас 90 мин на задержки schedule
+  workflow_dispatch:
+
+concurrency:
+  group: pulse1
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  aggregate:
+    name: Собрать кардиограммы детей
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout (пин по SHA)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Дети и замеры (журнал-из-фактов)
+        run: |
+          set -euo pipefail
+          LIST="$(curl -sf --max-time 30 -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+                  -H "Accept: application/vnd.github+json" \
+                  "https://api.github.com/users/rtynbirf/repos?per_page=100" \
+                  | jq -r '.[] | select(.fork == false and .archived == false and .private == false and .disabled == false) | .name' \
+                  | sort || true)"
+          SRC="api"
+          if [ -z "$LIST" ]; then
+            SRC="self-list"
+            LIST="$(sed -n '/```json/,/```/p' ПУЛЬС-1.md 2>/dev/null | grep '"pulse1_version"' | jq -r '.children[] // empty' | sort || true)"
+          fi
+          if [ -z "$LIST" ]; then
+            echo "::error::список детей пуст: API недоступен и самонесущий список не найден"
+            exit 1
+          fi
+          ROWS="$(mktemp)"
+          MEASURED=0
+          SCORE_SUM=0
+          DEBT_SUM=0
+          CHILDREN_JSON="["
+          while IFS= read -r repo; do
+            if [ -z "$repo" ]; then continue; fi
+            repo="${repo#rtynbirf/}"  # самонесущий список может хранить полные имена
+            DIR="$(mktemp -d)"
+            if ! git clone --depth 1 --quiet "https://github.com/rtynbirf/${repo}.git" "$DIR" 2>/dev/null; then
+              echo "| $repo | — | — | — | — | — | недоступен |" >> "$ROWS"
+              rm -rf "$DIR"
+              continue
+            fi
+            P="$DIR/PULSE.md"
+            if [ ! -f "$P" ]; then
+              echo "| $repo | — | — | — | — | — | пульс не родился |" >> "$ROWS"
+              rm -rf "$DIR"
+              continue
+            fi
+            BLK="$(sed -n '/```json/,/```/p' "$P" | grep '"pulse_version"' || true)"
+            if [ -z "$BLK" ]; then
+              echo "| $repo | — | — | — | — | — | нет машиночитаемого блока |" >> "$ROWS"
+              rm -rf "$DIR"
+              continue
+            fi
+            SCORE="$(jq -r '.score // "-"' <<< "$BLK")"
+            HYG="$(jq -r '.hygiene // "-"' <<< "$BLK")"
+            FRESH="$(jq -r '.fresh_days // "-"' <<< "$BLK")"
+            DEBT="$(jq -r '.debt // "-"' <<< "$BLK")"
+            COMMITS="$(jq -r '.commits // "-"' <<< "$BLK")"
+            DATE="$(sed -n 's/^| Дата замера (UTC) | \(.*\) |$/\1/p' "$P" | sed -n '1p')"
+            echo "| $repo | $SCORE | $HYG/9 | $FRESH | $DEBT | $COMMITS | $DATE |" >> "$ROWS"
+            case "$SCORE" in ''|*[!0-9]*) SCORE="-";; esac
+            case "$DEBT" in ''|*[!0-9]*) DEBT="-";; esac
+            if [ "$SCORE" != "-" ]; then
+              MEASURED=$((MEASURED + 1))
+              SCORE_SUM=$((SCORE_SUM + SCORE))
+              if [ "$DEBT" != "-" ]; then DEBT_SUM=$((DEBT_SUM + DEBT)); fi
+              if [ "$CHILDREN_JSON" != "[" ]; then CHILDREN_JSON="$CHILDREN_JSON,"; fi
+              CHILDREN_JSON="$CHILDREN_JSON\"$repo\""
+            fi
+            rm -rf "$DIR"
+          done <<< "$LIST"
+          CHILDREN_JSON="$CHILDREN_JSON]"
+          if [ "$MEASURED" -gt 0 ]; then AVG=$((SCORE_SUM / MEASURED)); else AVG=0; fi
+          echo "$SRC" > /tmp/pulse1.src
+          cp "$ROWS" /tmp/pulse1.rows
+          echo "$MEASURED" > /tmp/pulse1.measured
+          echo "$AVG" > /tmp/pulse1.avg
+          echo "$DEBT_SUM" > /tmp/pulse1.debt
+          echo "$CHILDREN_JSON" > /tmp/pulse1.children
+          echo "--- строки ---"
+          cat /tmp/pulse1.rows
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Сборка ПУЛЬС-1.md и коммит (ритм без шума)
+        run: |
+          set -euo pipefail
+          SRC="$(cat /tmp/pulse1.src)"
+          MEASURED="$(cat /tmp/pulse1.measured)"
+          AVG="$(cat /tmp/pulse1.avg)"
+          DEBT_SUM="$(cat /tmp/pulse1.debt)"
+          CHILDREN_JSON="$(cat /tmp/pulse1.children)"
+          {
+            cat <<HDR
+          # ПУЛЬС-1 — корневая кардиограмма аккаунта rtynbirf
+
+          PID1: корневой журнал, собирающий пульсы детей. Каждый публичный репозиторий сам себя обследует (PULSE.md в его корне), корень раз в неделю собирает показания shallow-клонами — без API-ключей и лимитов.
+          Приватные репо изолированному раннеру недоступны — честное ограничение; их кардиограммы — в книге аудита (лист «Волна-3 PID1»).
+
+          | Замер | Значение |
+          |---|---|
+          | Дата сборки (UTC) | $(date -u '+%Y-%m-%d %H:%M') |
+          | Источник списка детей | $SRC |
+          | Детей измерено | $MEASURED |
+          | Средняя оценка | $AVG / 100 |
+          | Суммарный техдолг | $DEBT_SUM |
+
+          ## Кардиограммы детей
+
+          | Репо | Оценка | Гигиена | Свежесть (дн.) | Техдолг | Коммитов | Замер |
+          |---|---|---|---|---|---|---|
+          HDR
+            cat /tmp/pulse1.rows
+            cat <<TAIL
+
+          ## Как это работает
+
+          - Дети: .github/workflows/self-audit.yml в каждом репо (пн 04:17 UTC).
+          - Корень: этот воркфлоу (пн 05:47 UTC) — shallow-клон каждого публичного репо, разбор машиночитаемого блока PULSE.md, сборка этой страницы.
+          - Список детей самонесущий: свежий через API, при отказе — из блока ниже; новые публичные репо добавляются следующей волной аудита.
+          - Ритм без шума: коммит только при существенном изменении показаний.
+          TAIL
+            printf '\n```json\n{"pulse1_version": 1, "measured": %s, "avg_score": %s, "total_debt": %s, "children": %s}\n```\n' "$MEASURED" "$AVG" "$DEBT_SUM" "$CHILDREN_JSON"
+          } > ПУЛЬС-1.md
+          echo "--- ПУЛЬС-1.md ---"
+          cat ПУЛЬС-1.md
+          PREV="$( { git show HEAD:ПУЛЬС-1.md 2>/dev/null | sed 's/^| Дата сборки.*/|D|/'; } || true )"
+          NEW="$(sed 's/^| Дата сборки.*/|D|/' ПУЛЬС-1.md)"
+          if [ "$PREV" = "$NEW" ]; then
+            AGE_DAYS=$(( ($(date +%s) - $(git log -1 --format=%ct)) / 86400 ))
+            if [ "$AGE_DAYS" -gt 50 ]; then
+              git config user.name "pulse-bot"
+              git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+              git commit --allow-empty -m "pulse-1: keepalive — корень жив, показания без изменений [skip ci]"
+              git push
+              echo "Keepalive: корень dormant ${AGE_DAYS} дн. — удар сердца для расписания"
+            else
+              echo "Показания без изменений — коммит не требуется (ритм без шума)"
+            fi
+            exit 0
+          fi
+          git config user.name "pulse-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ПУЛЬС-1.md
+          git commit -m "pulse-1: пересборка корневой кардиограммы [skip ci]"
+          git pull --rebase --autostash origin main 2>/dev/null || true
+          git push
