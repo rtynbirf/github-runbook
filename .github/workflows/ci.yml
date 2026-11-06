@@ -12,7 +12,8 @@ jobs:
   runbook-integrity:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7- name: Главы и журнал на месте
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - name: Главы и журнал на месте
         run: |
           test -s README.md
           for f in 01-sozdanie-repo.md 02-flagi-settings.md 03-vetki-i-zashchita.md 04-bezopasnost.md 05-api-shpargalka.md 06-poryadok-i-backapy.md 07-organizm-avtonomnost.md SOURCES.md; do
