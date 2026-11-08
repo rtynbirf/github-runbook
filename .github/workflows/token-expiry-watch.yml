@@ -1,0 +1,35 @@
+# П-74 (#98) · github-runbook · еженедельный часовой реестра ключей.
+# Понедельник 07:00 UTC + ручной запуск. Свой concurrency-дом wave5-token-watch.
+# При 🔴 джоба краснеет и печатает, какие ключи ротировать: список печатает
+# сам скрипт перед exit 1, шаг падает — джоба красная.
+name: token-expiry-watch
+
+on:
+  schedule:
+    - cron: "0 7 * * 1" # понедельник 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: wave5-token-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout (пин из действующих зелёных прогонов волны)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Selftest часового (без сети)
+        run: python3 tools/token_expiry_watch.py --selftest
+
+      - name: Живой прогон по token-registry.json
+        shell: bash
+        # pipefail обязателен: иначе tee проглотит exit 1 скрипта и гейт не сработает
+        run: |
+          set -o pipefail
+          python3 tools/token_expiry_watch.py --registry token-registry.json | tee "$GITHUB_STEP_SUMMARY"
