@@ -22,4 +22,4 @@ jobs:
         with:
           name: git-bundle-github-runbook-${{ github.run_id }}
           path: backup.bundle
-          retention-days: 90
+          retention-days: 14
