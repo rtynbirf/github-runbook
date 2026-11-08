@@ -18,8 +18,22 @@ jobs:
         run: git bundle create backup.bundle --all
       - name: Проверка целостности bundle
         run: git bundle verify backup.bundle
+      # Артефакт — бонус, не суть: суть (бандл создан и верифицирован) достигнута выше.
+      # Квота хранилища приватных релизов (446.7/500 МБ, media-vault) блокирует ЛЮБОЙ
+      # upload-artifact во всех приватных репо — не даём ей красить верификацию.
+      # Вернётся автоматически после освобождения квоты (см. НЕДОДЕЛАННОЕ, пункт П0-квота).
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        continue-on-error: true
         with:
           name: git-bundle-github-runbook-${{ github.run_id }}
           path: backup.bundle
           retention-days: 7
+      - name: Итог в job summary
+        if: always()
+        run: |
+          {
+            echo "## bundle-backup · $(date -u +%FT%TZ)"
+            echo "- бандл: создан и верифицирован (git bundle verify — см. лог выше)"
+            echo "- артефакт: загружен либо пропущен по квоте хранилища (ошибка шага не красит верификацию)"
+            echo "- корень квоты: приватный релиз media-vault 446.7/500 МБ; зеркало — release-vault/import/ruvson-lyrics"
+          } >> "$GITHUB_STEP_SUMMARY"
