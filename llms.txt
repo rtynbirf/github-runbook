@@ -1,0 +1,41 @@
+# github-runbook
+> Ранбук: настройка GitHub-репозитория человеком для человека — все флаги Settings, ветки и защита (Free vs Pro), безопасность, проверенная API-шпаргалка, журнал верификации
+
+Автоген 2026-11-08 · источник: живой GitHub API (номера и файлы не руками) · владелец rtynbirf · ветка `main`
+
+## Мембрана
+- README.md — для человека (GitHub-ранбук: настройка репозитория человеком для человека)
+- AGENTS.md — есть
+- LICENSE — CC-BY-4.0
+- topics: documentation, git, github, meta-tools, repo-settings, runbook, security
+
+## Карта корня
+- .github/
+- .gitignore
+- 01-sozdanie-repo.md
+- 02-flagi-settings.md
+- 03-vetki-i-zashchita.md
+- 04-bezopasnost.md
+- 05-api-shpargalka.md
+- 06-poryadok-i-backapy.md
+- 07-organizm-avtonomnost.md
+- AGENTS.md
+- CODEOWNERS
+- CONTRIBUTING.md
+- LICENSE
+- PULSE.md
+- README.md
+- … ещё 4
+
+## CI
+- workflow: bundle-backup
+- workflow: ci
+- workflow: guardian-tripwire
+- workflow: pulse-aggregator
+- workflow: release
+- workflow: self-audit
+
+## Ссылки
+- [GitHub](https://github.com/rtynbirf/github-runbook)
+- [README](https://github.com/rtynbirf/github-runbook/blob/main/README.md)
+- [raw llms.txt](https://raw.githubusercontent.com/rtynbirf/github-runbook/main/llms.txt)
