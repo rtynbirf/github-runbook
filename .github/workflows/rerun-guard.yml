@@ -1,0 +1,48 @@
+name: "rerun-guard — реанимация по закону, не по памяти (T13)"
+
+# T13 (repo-doctrine#23): guard живёт в github-runbook — учителе класса
+# реанимации. Три проверки: квот-класс упавших шагов, отсутствие
+# side-effect-шагов, рамка API (≤30 дней, ≤50 attempt). Идемпотентность —
+# артефактно (diff SHA256SUMS попыток пуст). Реран пишется в ворклог.
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: "репо с красным прогоном (OWNER/NAME)"
+        required: true
+      run_id:
+        description: "id прогона"
+        required: true
+      execute:
+        description: "true = выстрелить rerun-failed-jobs"
+        type: boolean
+        default: false
+
+permissions:
+  actions: write
+
+jobs:
+  guard:
+    name: Три проверки и выстрел
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - name: Re-run guard
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
+          RERUN_WORKLOG: rerun-worklog.jsonl
+        run: |
+          python3 scripts/rerun_guard.py \
+            --repo "${{ inputs.repo || 'rtynbirf/github-runbook' }}" \
+            --run-id "${{ inputs.run_id || '0' }}" \
+            ${{ inputs.execute == true && '--execute' || '' }}
+      - name: Артефакт ворклога
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: rerun-worklog
+          path: rerun-worklog.jsonl
+          if-no-files-found: ignore
