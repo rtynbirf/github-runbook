@@ -1,0 +1,39 @@
+# Волна ×3 · W3-A2 · issue #8 «Карта хранилища: стратоснимок всех слоёв».
+# Вердикт по снимкам — дополнение к wave3-storage-map.yml (волна ×3 W3-A),
+# не замена: стартует после каждого завершённого стратоснимка (workflow_run,
+# его коммит уже в main) и по ручному запросу. Только чтение:
+#   · шапка каждого CSV — ровно канон критерия приёмки (8 колонок);
+#   · свод «слой × ГБ × считается/не считается» (beacon вне квоты,
+#     public-free не считается, private-counted считается);
+#   · закон «масса живёт либо публично, либо в Маяке»: private-релизы > 0
+#     вне разрешённого списка — нарушение; нули флаг не поднимают;
+#   · контрольные репо: release-vault → beacon, ruvson-lyrics → private-counted;
+#   · сумма private-counted против якоря ручного аудита 08.11 (426/500 МБ);
+#   · append-only история storage-map/ по git log: каждый файл снимка
+#     ровно в одном коммите (нужна полная история — fetch-depth: 0).
+# Вердиктор ни один файл не пишет и не правит: чужие предложения читают
+# CSV, но не редактируют снимки (правило роя из «Хода для роя»).
+
+name: wave3-map-verdict
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [wave3-storage-map]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  verdict:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # append-only история storage-map/ проверяется по git log
+
+      - name: Вердикт по снимкам карты (read-only)
+        run: |
+          python3 scripts/wave3/map_verdict.py | tee -a "$GITHUB_STEP_SUMMARY"
+          exit ${PIPESTATUS[0]}

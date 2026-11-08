@@ -1,0 +1,31 @@
+# ── Волна ×3 · добивание (W3-A1) · issue #5 «Retention как код» ──────────────
+# Ночная независимая сверка канона accounts/retention.yml по всем репо
+# владельца — дополнение к синхронизатору волны A (wave3-retention-canon.yml +
+# scripts/wave3/retention_audit.py, их не трогаем): тот РАЗНОСИТ канон,
+# эта сверка только ЧИТАЕТ API и краснит прогон при расхождении
+# (критерий 2: «канон соблюдён в 35/35 репо с CI»). Тихое окно взято из
+# канона (quiet_window_utc). Скрипт идемпотентен: повторный проход — ноль
+# диффов. release-класс и protected_repos (media-vault) — вне зоны: СВЯТОЕ.
+
+name: wave3-retention-check
+
+on:
+  schedule:
+    - cron: "10 3 * * *"          # внутри тихого окна канона (02:00–04:00 UTC)
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Забрать рунбук
+        uses: actions/checkout@v4
+
+      - name: Сверка канона retention по репо владельца
+        env:
+          PAT_TOKEN: ${{ secrets.SWARM_TOKEN }}   # чтение списка репо и воркфлоу
+          CANON_PATH: accounts/retention.yml
+        run: python3 scripts/w3a1/retention_canon_check.py

@@ -1,0 +1,26 @@
+# ── Секрет-врач · словарь паттернов (ПРЕДЛОЖЕНИЕ-16, issue #7, слот волны 3) ──
+# Ровно тот «слот волны 3» из предложения: словарь паттернов врача, пополняемый
+# ТОЛЬКО добавлением строк — новые паттерны не ломают старые правила,
+# существующие строки не правятся и не удаляются (правило генома).
+# Читается scripts/w3a1/secret_doctor_checks.py (режим scan/drill).
+#
+# Поля строки-паттерна:
+#   id       — короткое имя правила (не меняется после рождения)
+#   match    — подстрока для поиска в логах джоб (без чувствительных значений)
+#   incident — маркер инцидента: SECRET-INCIDENT (болезнь секрета) или пусто
+#   watch    — yes: только в журнал врачу, инцидент не поднимаем
+#   meaning  — что паттерн означает (человеческим языком)
+#
+# Начальный набор — паттерны из тела предложения и кейса 08:05 08.11:
+# 401 / 403 / Bad credentials / Resource not accessible by integration,
+# плюс 422 и rate-limit из ход для роя (401/403/422/rate-limit).
+
+version: 1
+
+patterns:
+  - {id: http-401,            match: "401", incident: "SECRET-INCIDENT", watch: "no",  meaning: "протух или неверен токен (кейс 08:05 08.11)"}
+  - {id: http-403,            match: "403", incident: "SECRET-INCIDENT", watch: "no",  meaning: "токен жив но прав не хватает"}
+  - {id: bad-credentials,     match: "Bad credentials", incident: "SECRET-INCIDENT", watch: "no", meaning: "GitHub отклонил креденшалы"}
+  - {id: integration-blocked, match: "Resource not accessible by integration", incident: "SECRET-INCIDENT", watch: "no", meaning: "токен интеграции без нужного скоупа"}
+  - {id: http-422,            match: "422", incident: "", watch: "yes", meaning: "ошибка валидации — в журнал врачу без инцидента"}
+  - {id: rate-limit,          match: "rate limit", incident: "", watch: "yes", meaning: "упёрлись в лимит API — пауза а не болезнь секрета"}

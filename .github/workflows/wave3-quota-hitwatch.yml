@@ -1,0 +1,34 @@
+# ── Волна ×3 · добивание (W3-A1) · issue #4 «Пульс квоты» ────────────────────
+# Квота-дозор — дополнение к зонду волны A (wave3-quota-pulse.yml, его не
+# трогаем). Пульс смотрит ВПЕРЁД (биллимые байты и прогноз), дозор смотрит
+# НАЗАД: раз в сутки ищет в логах красных прогонов за 30 дней следы
+# «quota has been hit» и печатает «КВОТА-УДАРЫ: N/30д» — живое свидетельство
+# критерия 2 («ноль внезапных quota hit за 30 дней»). Обнаружил удар — сам
+# поднимает немедленную гигиену: удаляет ТОЛЬКО свои расходники текущего репо.
+# media-vault — СВЯТОЕ владельца: запрет зашит в скрипте.
+# Скрипт: scripts/w3a1/quota_hitwatch.py (stdlib, без состояния).
+
+name: wave3-quota-hitwatch
+
+on:
+  schedule:
+    - cron: "41 6 * * *"          # раз в сутки, в стороне от утреннего пульса
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  actions: read                   # чтение прогонов и логов; запись не нужна
+
+jobs:
+  hitwatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Забрать рунбук
+        uses: actions/checkout@v4
+
+      - name: Дозор quota-hit за 30 дней
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAT_TOKEN: ${{ secrets.SWARM_TOKEN }}        # необязателен: расширяет обзор до всех репо аккаунта
+          QUOTA_HYGIENE_ON_HIT: "1"
+        run: python3 scripts/w3a1/quota_hitwatch.py
