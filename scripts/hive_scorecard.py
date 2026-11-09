@@ -53,14 +53,16 @@ CAND = {
 
 
 def tok():
-    for k in ("GH_TOKEN", "HIVE_TOKEN"):
+    # HIVE_TOKEN (PAT улья) первичен: GITHUB_TOKEN в Actions может быть зажат
+    # политикой аккаунта (без issues:write) — PAT гарантированно комментирует.
+    for k in ("HIVE_TOKEN", "GH_TOKEN"):
         v = os.environ.get(k)
         if v:
             return v.strip()
     if os.path.exists("/tmp/.gt"):
         with open("/tmp/.gt") as f:
             return f.read().strip()
-    sys.exit("нет токена: GH_TOKEN/HIVE_TOKEN или /tmp/.gt")
+    sys.exit("нет токена: HIVE_TOKEN/GH_TOKEN или /tmp/.gt")
 
 
 T = tok()
@@ -319,8 +321,35 @@ def main():
                     except Exception:
                         pass
 
+    # Источник истины дедупа — сама issue (fact = байты): ищем маркер
+    # в последних комментариях (сортировка sort= ненадёжен — пагинация + хвост).
+    already_posted = False
+    if reds:
+        recent = []
+        url_c = f"https://api.github.com/repos/{OWNER}/github-runbook/issues/10/comments?per_page=100"
+        while url_c:
+            req_c = urllib.request.Request(url_c, headers={
+                "Authorization": f"Bearer {T}",
+                "Accept": "application/vnd.github+json",
+            })
+            try:
+                with urllib.request.urlopen(req_c) as r:
+                    page = json.loads(r.read() or b"[]")
+                    link = r.headers.get("Link") or ""
+            except (urllib.error.HTTPError, urllib.error.URLError):
+                break
+            if not isinstance(page, list):
+                break
+            recent.extend(page)
+            url_c = None
+            for part in link.split(","):
+                if 'rel="next"' in part:
+                    url_c = part[part.find("<") + 1:part.find(">")]
+        marker = f"<!-- hive-scorecard {dedup_key}"
+        already_posted = any(marker in (c.get("body") or "") for c in recent[-10:])
+
     commented = False
-    want_comment = (reds or args.stamp) and not args.dry_run and prev_dedup != dedup_key
+    want_comment = (reds or args.stamp) and not args.dry_run and not already_posted
     if want_comment:
         digest = [
             f"## 🧬 HIVE-SCORECARD: облёт улья {ts}",
@@ -346,18 +375,24 @@ def main():
             "",
             f"<!-- hive-scorecard {dedup_key} -->",
         ]
-        st, _ = api(
+        st, resp = api(
             f"https://api.github.com/repos/{OWNER}/github-runbook/issues/10/comments",
             method="POST", payload={"body": "\n".join(digest)},
         )
         commented = st in (200, 201)
+        if not commented:
+            print(f"⚠️ аларм-POST не прошёл: HTTP {st} {resp.get('message', '')}", file=sys.stderr)
 
     if not args.dry_run:
+        # Дедуп пишется только когда комментарий реально поставлен (или не требовался):
+        # неудачный POST не запоминается — следующий прогон ретраит аларм.
+        ledger_dedup = dedup_key if (commented or not want_comment) else ""
         with open(ledger_path, "a") as f:
             f.write(json.dumps({
-                "ts": ts, "dedup": dedup_key, "avg": avg,
+                "ts": ts, "dedup": ledger_dedup, "avg": avg,
                 "reds": len(reds), "repos": len(rows),
                 "grades": grades_hist,
+                "alarm_posted": bool(commented),
             }, ensure_ascii=False) + "\n")
 
     if not args.quiet:

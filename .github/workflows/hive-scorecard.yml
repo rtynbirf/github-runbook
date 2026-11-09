@@ -32,6 +32,7 @@ jobs:
       - name: Снять счёт улья (fact = байты)
         env:
           GH_TOKEN: ${{ secrets.HIVE_TOKEN }}
+          HIVE_TOKEN: ${{ secrets.HIVE_TOKEN }}
         run: python scripts/hive_scorecard.py --quiet
       - name: Опубликовать счёт и журнал
         run: |
