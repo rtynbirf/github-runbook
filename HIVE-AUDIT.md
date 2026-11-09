@@ -1,6 +1,6 @@
 # 🧬 HIVE-AUDIT · РЕВИЗОР-2026 · живой аудит флота
 
-> Последняя ревизия: 2026-11-09T21:42:43Z UTC · тренды: GitHub Actions Security Roadmap 2026 · OpenSSF
+> Последняя ревизия: 2026-11-09T21:45:29Z UTC · тренды: GitHub Actions Security Roadmap 2026 · OpenSSF
 
 | Показатель | Значение |
 |---|---|
