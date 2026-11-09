@@ -1,3 +1,34 @@
 {
-  "entries": []
+  "entries": [
+    {
+      "label": "classic rtynbirf · волна ПОЛИМАТ 2026-11-09",
+      "kind": "classic",
+      "scopes": [
+        "admin:enterprise",
+        "admin:gpg_key",
+        "admin:org",
+        "admin:org_hook",
+        "admin:public_key",
+        "admin:repo_hook",
+        "admin:ssh_signing_key",
+        "audit_log",
+        "codespace",
+        "copilot",
+        "delete:packages",
+        "delete_repo",
+        "gist",
+        "notifications",
+        "project",
+        "repo",
+        "user",
+        "workflow",
+        "write:discussion",
+        "write:network_configurations",
+        "write:packages"
+      ],
+      "expires_at": null,
+      "rotated_at": "2026-11-09",
+      "note": "Единственный живой классический ключ: проверен /user HTTP 200 (2026-11-09), login rtynbirf, лимит 4999/5000. Предшественник (ghp_6ipr…) мёртв — 401 в тот же день. Секрет живёт только у Хозяина и в локальном хранилище агента; в репозиториях — никогда. Ротация на fine-grained ≤90 дней по П-74 §2 — решение Хозяина."
+    }
+  ]
 }
