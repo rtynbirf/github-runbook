@@ -1,0 +1,46 @@
+name: hive-scorecard
+
+# 🧬 HIVE-SCORECARD — третий слой роя (после hive-control и hive-sentry).
+# Scorecard-lite: 0–100 счёт гигиены и CI каждому репо улья (эвристики OpenSSF
+# Scorecard, адаптированные под приватный флот), грейды A+…E, ранжирование
+# «худшие сверху», машиночитаемый HIVE-SCORES.json, append-only журнал и
+# аларм-канал в issue #10 (дедуп по отпечатку красных + дата МСК).
+# Практики 2026: OpenSSF Scorecard (heuristic scoring), GitHub Blog «Tame
+# Dependabot», StepSecurity/Wiz hardening (SHA-pin, least-privilege) — в доме.
+
+on:
+  schedule:
+    - cron: "50 5 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: hive-scorecard
+  cancel-in-progress: false
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Снять счёт улья (fact = байты)
+        env:
+          GH_TOKEN: ${{ secrets.HIVE_TOKEN }}
+        run: python scripts/hive_scorecard.py --quiet
+      - name: Опубликовать счёт и журнал
+        run: |
+          git config user.name "hive-scorecard[bot]"
+          git config user.email "119601232+rtynbirf@users.noreply.github.com"
+          git add HIVE-SCORECARD.md HIVE-SCORES.json hive_scorecard_ledger.jsonl
+          if git diff --cached --quiet; then
+            echo "счёт без изменений — коммита нет (честный ноль)"
+          else
+            git commit -m "hive-scorecard: счёт улья $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
+            git push
+          fi

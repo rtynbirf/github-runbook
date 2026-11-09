@@ -1,0 +1,39 @@
+name: hive-doctor
+
+# 🩺 HIVE-DOCTOR — самолечение ГИГИЕНЫ флота (дополнение к hive-sentry, который
+# лечит CI-фантомов): кладёт отсутствующие SECURITY.md, ГРУППОВОЙ МЕСЯЧНЫЙ
+# dependabot.yml (практика GitHub Blog 2026), заполняет topics/description.
+# Идемпотент: только отсутствующее, ничего не перезаписывает.
+# Сначала план (--apply=false), потом лечение (--apply=true).
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: "имя репо или all"
+        required: true
+        default: "all"
+      apply:
+        description: "true = лечить, false = только план"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hive-doctor
+  cancel-in-progress: false
+
+jobs:
+  heal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Приём у доктора (fact = байты)
+        env:
+          GH_TOKEN: ${{ secrets.HIVE_TOKEN }}
+        run: python scripts/hive_doctor.py --repo "${{ github.event.inputs.repo }}" ${{ github.event.inputs.apply == 'true' && '--apply' || '' }}
