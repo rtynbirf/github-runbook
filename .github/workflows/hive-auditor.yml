@@ -27,6 +27,7 @@ jobs:
       - name: "Ревизия флота (42 репо)"
         env:
           GH_TOKEN: ${{ secrets.HIVE_TOKEN }}
+          PYTHONIOENCODING: utf-8
         run: python3 scripts/hive_auditor.py
       - name: "Коммит живого аудита (append-only ledger)"
         run: |

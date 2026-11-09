@@ -28,6 +28,14 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 
+# грабля №55: на раннере LANG=C → stdout/файлы в ascii — кириллица роняет скрипт.
+# Броня: принудительный UTF-8 на все потоки и записи.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 API = "https://api.github.com"
 OWNER = "rtynbirf"
 RUNBOOK = f"{OWNER}/github-runbook"
@@ -212,7 +220,7 @@ def main():
         "- аларм в issue #10 — только при смене отпечатка находок (дедуп).",
         "",
     ]
-    with open(os.path.join(ROOT, "HIVE-AUDIT.md"), "w") as f:
+    with open(os.path.join(ROOT, "HIVE-AUDIT.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
 
     # ledger append-only
@@ -226,7 +234,7 @@ def main():
         "unprotected": n_unprot,
         "worst": [{"repo": r["repo"], "score": score(r)} for r in scored[:5]],
     }
-    with open(os.path.join(ROOT, "hive_auditor_ledger.jsonl"), "a") as f:
+    with open(os.path.join(ROOT, "hive_auditor_ledger.jsonl"), "a", encoding="utf-8") as f:
         f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
     # дедуп-аларм
@@ -239,7 +247,7 @@ def main():
     state_path = os.path.join(ROOT, "hive_auditor_state.json")
     prev = {}
     if os.path.exists(state_path):
-        with open(state_path) as f:
+        with open(state_path, encoding="utf-8") as f:
             prev = json.load(f)
     if prev.get("fingerprint") != fp:
         body = (
@@ -260,7 +268,7 @@ def main():
         print("отпечаток без изменений — аларм подавлен (дедуп)")
     prev["last_run"] = now
     prev["hive_avg"] = hive_avg
-    with open(state_path, "w") as f:
+    with open(state_path, "w", encoding="utf-8") as f:
         json.dump(prev, f, ensure_ascii=False, indent=1)
 
     print(f"РЕВИЗОР: {len(results)} репо · флот {hive_avg}/100 · mut={n_mut} perm={n_perm} prt={n_prt} unprot={n_unprot}")
