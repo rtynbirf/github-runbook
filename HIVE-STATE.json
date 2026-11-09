@@ -1,11 +1,11 @@
 {
- "timestamp": "09.11.2026 23:15 МСК",
+ "timestamp": "09.11.2026 23:21 МСК",
  "repos_total": 42,
- "green": 14,
- "red": 22,
- "empty": 5,
+ "green": 24,
+ "red": 13,
+ "empty": 4,
  "archived": 1,
- "open_issues": 95,
+ "open_issues": 94,
  "reds": [
   {
    "repo": ".github",
@@ -20,13 +20,6 @@
    "conclusion": "failure",
    "run_number": 19,
    "url": "https://github.com/rtynbirf/.github/actions/runs/42673315849"
-  },
-  {
-   "repo": "H-PE11-PHOENIX",
-   "name": "evidence-chain",
-   "conclusion": "failure",
-   "run_number": 26,
-   "url": "https://github.com/rtynbirf/H-PE11-PHOENIX/actions/runs/42673545655"
   },
   {
    "repo": "agryp",
@@ -50,74 +43,11 @@
    "url": "https://github.com/rtynbirf/cell-rs/actions/runs/42673366209"
   },
   {
-   "repo": "cell65-host",
-   "name": "ci",
-   "conclusion": "failure",
-   "run_number": 38,
-   "url": "https://github.com/rtynbirf/cell65-host/actions/runs/42673412371"
-  },
-  {
-   "repo": "commons",
-   "name": "ci",
-   "conclusion": "failure",
-   "run_number": 150,
-   "url": "https://github.com/rtynbirf/commons/actions/runs/42673434838"
-  },
-  {
-   "repo": "commons",
-   "name": "sbom",
-   "conclusion": "failure",
-   "run_number": 23,
-   "url": "https://github.com/rtynbirf/commons/actions/runs/42673434686"
-  },
-  {
-   "repo": "commons",
-   "name": "scorecard",
-   "conclusion": "failure",
-   "run_number": 121,
-   "url": "https://github.com/rtynbirf/commons/actions/runs/42673434334"
-  },
-  {
-   "repo": "domovoy-tweaker",
-   "name": "CI",
-   "conclusion": "failure",
-   "run_number": 113,
-   "url": "https://github.com/rtynbirf/domovoy-tweaker/actions/runs/42673456825"
-  },
-  {
    "repo": "edinyy-svod",
    "name": "ci",
    "conclusion": "failure",
    "run_number": 41,
    "url": "https://github.com/rtynbirf/edinyy-svod/actions/runs/42673478427"
-  },
-  {
-   "repo": "karaoke-dream",
-   "name": "CI",
-   "conclusion": "failure",
-   "run_number": 27,
-   "url": "https://github.com/rtynbirf/karaoke-dream/actions/runs/42673567856"
-  },
-  {
-   "repo": "karaoke-dream",
-   "name": "pages build and deployment",
-   "conclusion": "failure",
-   "run_number": 15,
-   "url": "https://github.com/rtynbirf/karaoke-dream/actions/runs/42673568384"
-  },
-  {
-   "repo": "neutral-browser",
-   "name": "CI",
-   "conclusion": "failure",
-   "run_number": 23,
-   "url": "https://github.com/rtynbirf/neutral-browser/actions/runs/42673636043"
-  },
-  {
-   "repo": "neutral-browser",
-   "name": "П43 supply-chain — cargo-deny + cargo-audit",
-   "conclusion": "failure",
-   "run_number": 11,
-   "url": "https://github.com/rtynbirf/neutral-browser/actions/runs/42673636123"
   },
   {
    "repo": "nous",
@@ -139,6 +69,13 @@
    "conclusion": "failure",
    "run_number": 16,
    "url": "https://github.com/rtynbirf/nous/actions/runs/42673660307"
+  },
+  {
+   "repo": "polimat-hub",
+   "name": "osps-gate · OSPS-Baseline матрица (evaluate)",
+   "conclusion": "failure",
+   "run_number": 1,
+   "url": "https://github.com/rtynbirf/polimat-hub/actions/runs/42691117554"
   },
   {
    "repo": "polimat-task174",
@@ -169,20 +106,6 @@
    "url": "https://github.com/rtynbirf/repo-doctrine/actions/runs/42673907020"
   },
   {
-   "repo": "rtynbirf.github.io",
-   "name": "Deploy корневого сайта",
-   "conclusion": "failure",
-   "run_number": 30,
-   "url": "https://github.com/rtynbirf/rtynbirf.github.io/actions/runs/42673970803"
-  },
-  {
-   "repo": "runtime-protocol",
-   "name": "metabolism",
-   "conclusion": "failure",
-   "run_number": 36,
-   "url": "https://github.com/rtynbirf/runtime-protocol/actions/runs/42673992728"
-  },
-  {
    "repo": "ruvson-lyrics",
    "name": "CI",
    "conclusion": "failure",
@@ -190,18 +113,11 @@
    "url": "https://github.com/rtynbirf/ruvson-lyrics/actions/runs/42674011363"
   },
   {
-   "repo": "ruvson-rse2",
-   "name": "CI",
-   "conclusion": "failure",
-   "run_number": 28,
-   "url": "https://github.com/rtynbirf/ruvson-rse2/actions/runs/42674037562"
-  },
-  {
    "repo": "singulyar",
    "name": "Оракулы дома зелёные (sovereign check)",
    "conclusion": "failure",
-   "run_number": 133,
-   "url": "https://github.com/rtynbirf/singulyar/actions/runs/42690657854"
+   "run_number": 135,
+   "url": "https://github.com/rtynbirf/singulyar/actions/runs/42691459952"
   },
   {
    "repo": "task-graph-propagator",
@@ -209,13 +125,6 @@
    "conclusion": "failure",
    "run_number": 30,
    "url": "https://github.com/rtynbirf/task-graph-propagator/actions/runs/42674105988"
-  },
-  {
-   "repo": "voice-atlas-llm",
-   "name": "CI",
-   "conclusion": "failure",
-   "run_number": 72,
-   "url": "https://github.com/rtynbirf/voice-atlas-llm/actions/runs/42674168888"
   },
   {
    "repo": "web-evolution-1991-2026",
@@ -232,7 +141,7 @@
    "url": "https://github.com/rtynbirf/windows-chronicle/actions/runs/42674208290"
   }
  ],
- "artifacts_mb": 531.2,
+ "artifacts_mb": 600.71,
  "rows": [
   {
    "repo": ".github",
@@ -263,20 +172,20 @@
    "repo": "H-PE11-PHOENIX",
    "archived": false,
    "default_branch": "main",
-   "grade": "🔴 RED ×1",
-   "head_sha": "70c2d73",
+   "grade": "🟢 GREEN",
+   "head_sha": "8e8ff76",
    "workflows": [
     {
      "name": "evidence-chain",
-     "conclusion": "failure",
-     "run_number": 26,
-     "url": "https://github.com/rtynbirf/H-PE11-PHOENIX/actions/runs/42673545655"
+     "conclusion": "success",
+     "run_number": 27,
+     "url": "https://github.com/rtynbirf/H-PE11-PHOENIX/actions/runs/42691097271"
     },
     {
      "name": "guardian-tripwire",
      "conclusion": "success",
-     "run_number": 95,
-     "url": "https://github.com/rtynbirf/H-PE11-PHOENIX/actions/runs/42673545434"
+     "run_number": 96,
+     "url": "https://github.com/rtynbirf/H-PE11-PHOENIX/actions/runs/42691097662"
     }
    ],
    "open_issues": 1,
@@ -338,9 +247,16 @@
    "repo": "cell-swarm",
    "archived": false,
    "default_branch": "main",
-   "grade": "⚪ EMPTY (нет workflow)",
-   "head_sha": "de7e2f9",
-   "workflows": [],
+   "grade": "🟢 GREEN",
+   "head_sha": "a7bad6a",
+   "workflows": [
+    {
+     "name": "metabolism",
+     "conclusion": "success",
+     "run_number": 147,
+     "url": "https://github.com/rtynbirf/cell-swarm/actions/runs/42691930971"
+    }
+   ],
    "open_issues": 0,
    "open_prs": 0,
    "dependabot": true,
@@ -350,14 +266,14 @@
    "repo": "cell65-host",
    "archived": false,
    "default_branch": "main",
-   "grade": "🔴 RED ×1",
-   "head_sha": "0f27395",
+   "grade": "🟢 GREEN",
+   "head_sha": "d2750b3",
    "workflows": [
     {
      "name": "ci",
-     "conclusion": "failure",
-     "run_number": 38,
-     "url": "https://github.com/rtynbirf/cell65-host/actions/runs/42673412371"
+     "conclusion": "success",
+     "run_number": 39,
+     "url": "https://github.com/rtynbirf/cell65-host/actions/runs/42691384857"
     }
    ],
    "open_issues": 0,
@@ -369,26 +285,26 @@
    "repo": "commons",
    "archived": false,
    "default_branch": "main",
-   "grade": "🔴 RED ×3",
-   "head_sha": "04742c3",
+   "grade": "🟢 GREEN",
+   "head_sha": "8c6611c",
    "workflows": [
     {
      "name": "ci",
-     "conclusion": "failure",
-     "run_number": 150,
-     "url": "https://github.com/rtynbirf/commons/actions/runs/42673434838"
+     "conclusion": "success",
+     "run_number": 151,
+     "url": "https://github.com/rtynbirf/commons/actions/runs/42691389705"
     },
     {
      "name": "sbom",
-     "conclusion": "failure",
-     "run_number": 23,
-     "url": "https://github.com/rtynbirf/commons/actions/runs/42673434686"
+     "conclusion": "success",
+     "run_number": 24,
+     "url": "https://github.com/rtynbirf/commons/actions/runs/42691389857"
     },
     {
      "name": "scorecard",
-     "conclusion": "failure",
-     "run_number": 121,
-     "url": "https://github.com/rtynbirf/commons/actions/runs/42673434334"
+     "conclusion": "success",
+     "run_number": 122,
+     "url": "https://github.com/rtynbirf/commons/actions/runs/42691389927"
     }
    ],
    "open_issues": 1,
@@ -400,20 +316,20 @@
    "repo": "domovoy-tweaker",
    "archived": false,
    "default_branch": "main",
-   "grade": "🔴 RED ×1",
-   "head_sha": "b6b1f12",
+   "grade": "🟢 GREEN",
+   "head_sha": "775a956",
    "workflows": [
     {
      "name": "CI",
-     "conclusion": "failure",
-     "run_number": 113,
-     "url": "https://github.com/rtynbirf/domovoy-tweaker/actions/runs/42673456825"
+     "conclusion": "success",
+     "run_number": 114,
+     "url": "https://github.com/rtynbirf/domovoy-tweaker/actions/runs/42691395319"
     }
    ],
    "open_issues": 0,
    "open_prs": 0,
    "dependabot": true,
-   "artifacts_mb": 0.82
+   "artifacts_mb": 0.83
   },
   {
    "repo": "edinyy-svod",
@@ -445,19 +361,25 @@
    "archived": false,
    "default_branch": "main",
    "grade": "🟢 GREEN",
-   "head_sha": "7d9d094",
+   "head_sha": "2943b28",
    "workflows": [
     {
      "name": "ci",
      "conclusion": "success",
-     "run_number": 97,
-     "url": "https://github.com/rtynbirf/github-runbook/actions/runs/42685150987"
+     "run_number": 98,
+     "url": "https://github.com/rtynbirf/github-runbook/actions/runs/42691912235"
     },
     {
      "name": "guardian-tripwire",
      "conclusion": "success",
-     "run_number": 87,
-     "url": "https://github.com/rtynbirf/github-runbook/actions/runs/42685150464"
+     "run_number": 88,
+     "url": "https://github.com/rtynbirf/github-runbook/actions/runs/42691912831"
+    },
+    {
+     "name": "hive-control",
+     "conclusion": null,
+     "run_number": 2,
+     "url": "https://github.com/rtynbirf/github-runbook/actions/runs/42691924134"
     }
    ],
    "open_issues": 8,
@@ -470,13 +392,13 @@
    "archived": false,
    "default_branch": "main",
    "grade": "🟢 GREEN",
-   "head_sha": "d7e7175",
+   "head_sha": "75a7ed8",
    "workflows": [
     {
      "name": "validate",
      "conclusion": "success",
-     "run_number": 47,
-     "url": "https://github.com/rtynbirf/global-video-platforms-registry/actions/runs/42673526575"
+     "run_number": 48,
+     "url": "https://github.com/rtynbirf/global-video-platforms-registry/actions/runs/42691399490"
     }
    ],
    "open_issues": 0,
@@ -488,26 +410,26 @@
    "repo": "karaoke-dream",
    "archived": false,
    "default_branch": "main",
-   "grade": "🔴 RED ×2",
-   "head_sha": "2360640",
+   "grade": "🟢 GREEN",
+   "head_sha": "55273fb",
    "workflows": [
     {
      "name": "CI",
-     "conclusion": "failure",
-     "run_number": 27,
-     "url": "https://github.com/rtynbirf/karaoke-dream/actions/runs/42673567856"
+     "conclusion": "success",
+     "run_number": 28,
+     "url": "https://github.com/rtynbirf/karaoke-dream/actions/runs/42691404667"
     },
     {
      "name": "pages build and deployment",
-     "conclusion": "failure",
-     "run_number": 15,
-     "url": "https://github.com/rtynbirf/karaoke-dream/actions/runs/42673568384"
+     "conclusion": "success",
+     "run_number": 16,
+     "url": "https://github.com/rtynbirf/karaoke-dream/actions/runs/42691405180"
     }
    ],
    "open_issues": 0,
    "open_prs": 0,
    "dependabot": true,
-   "artifacts_mb": 2.45
+   "artifacts_mb": 3.02
   },
   {
    "repo": "language-through-the-ages",
@@ -544,20 +466,20 @@
    "repo": "neutral-browser",
    "archived": false,
    "default_branch": "main",
-   "grade": "🔴 RED ×2",
-   "head_sha": "48c17d6",
+   "grade": "🟢 GREEN",
+   "head_sha": "d7b54b9",
    "workflows": [
     {
      "name": "CI",
-     "conclusion": "failure",
-     "run_number": 23,
-     "url": "https://github.com/rtynbirf/neutral-browser/actions/runs/42673636043"
+     "conclusion": "success",
+     "run_number": 24,
+     "url": "https://github.com/rtynbirf/neutral-browser/actions/runs/42691409664"
     },
     {
      "name": "П43 supply-chain — cargo-deny + cargo-audit",
-     "conclusion": "failure",
-     "run_number": 11,
-     "url": "https://github.com/rtynbirf/neutral-browser/actions/runs/42673636123"
+     "conclusion": "success",
+     "run_number": 12,
+     "url": "https://github.com/rtynbirf/neutral-browser/actions/runs/42691409535"
     }
    ],
    "open_issues": 0,
@@ -601,13 +523,13 @@
    "archived": false,
    "default_branch": "main",
    "grade": "🟢 GREEN",
-   "head_sha": "fcc23aa",
+   "head_sha": "814d245",
    "workflows": [
     {
      "name": "FORGE-DAG",
      "conclusion": "success",
-     "run_number": 10,
-     "url": "https://github.com/rtynbirf/os-forge/actions/runs/42673681447"
+     "run_number": 11,
+     "url": "https://github.com/rtynbirf/os-forge/actions/runs/42691415853"
     }
    ],
    "open_issues": 0,
@@ -619,14 +541,14 @@
    "repo": "polimat-hub",
    "archived": false,
    "default_branch": "main",
-   "grade": "🟢 GREEN",
-   "head_sha": "ee299a0",
+   "grade": "🔴 RED ×1",
+   "head_sha": "2b172a2",
    "workflows": [
     {
-     "name": "root-oracle — оракул корня (П-23)",
-     "conclusion": "success",
-     "run_number": 8,
-     "url": "https://github.com/rtynbirf/polimat-hub/actions/runs/42685406827"
+     "name": "osps-gate · OSPS-Baseline матрица (evaluate)",
+     "conclusion": "failure",
+     "run_number": 1,
+     "url": "https://github.com/rtynbirf/polimat-hub/actions/runs/42691117554"
     }
    ],
    "open_issues": 68,
@@ -658,7 +580,7 @@
    "archived": false,
    "default_branch": "main",
    "grade": "⚪ EMPTY (нет workflow)",
-   "head_sha": "8596c2e",
+   "head_sha": "8852b9f",
    "workflows": [],
    "open_issues": 0,
    "open_prs": 0,
@@ -670,13 +592,13 @@
    "archived": false,
    "default_branch": "main",
    "grade": "🟢 GREEN",
-   "head_sha": "a39dcd8",
+   "head_sha": "fb406a9",
    "workflows": [
     {
      "name": "ci",
      "conclusion": "success",
-     "run_number": 24,
-     "url": "https://github.com/rtynbirf/polymath-gen/actions/runs/42673768901"
+     "run_number": 25,
+     "url": "https://github.com/rtynbirf/polymath-gen/actions/runs/42691424928"
     }
    ],
    "open_issues": 0,
@@ -720,13 +642,13 @@
    "archived": false,
    "default_branch": "main",
    "grade": "🟢 GREEN",
-   "head_sha": "d8cca34",
+   "head_sha": "3dc182b",
    "workflows": [
     {
      "name": "validate",
      "conclusion": "success",
-     "run_number": 26,
-     "url": "https://github.com/rtynbirf/polymath-tools-atlas/actions/runs/42673814007"
+     "run_number": 27,
+     "url": "https://github.com/rtynbirf/polymath-tools-atlas/actions/runs/42691430681"
     }
    ],
    "open_issues": 0,
@@ -758,7 +680,7 @@
    "archived": false,
    "default_branch": "main",
    "grade": "⚪ EMPTY (нет workflow)",
-   "head_sha": "cff4ade",
+   "head_sha": "8a09656",
    "workflows": [],
    "open_issues": 0,
    "open_prs": 0,
@@ -826,13 +748,13 @@
    "archived": false,
    "default_branch": "main",
    "grade": "🟢 GREEN",
-   "head_sha": "c89003b",
+   "head_sha": "2dee2c0",
    "workflows": [
     {
      "name": "CI",
      "conclusion": "success",
-     "run_number": 16,
-     "url": "https://github.com/rtynbirf/revo/actions/runs/42673930038"
+     "run_number": 17,
+     "url": "https://github.com/rtynbirf/revo/actions/runs/42691436898"
     }
    ],
    "open_issues": 0,
@@ -845,13 +767,13 @@
    "archived": false,
    "default_branch": "main",
    "grade": "🟢 GREEN",
-   "head_sha": "5a634b3",
+   "head_sha": "288b72a",
    "workflows": [
     {
      "name": "generate snake",
      "conclusion": "success",
-     "run_number": 43,
-     "url": "https://github.com/rtynbirf/rtynbirf/actions/runs/42683677209"
+     "run_number": 52,
+     "url": "https://github.com/rtynbirf/rtynbirf/actions/runs/42691786840"
     }
    ],
    "open_issues": 0,
@@ -863,20 +785,20 @@
    "repo": "rtynbirf.github.io",
    "archived": false,
    "default_branch": "main",
-   "grade": "🔴 RED ×1",
-   "head_sha": "32a2ca6",
+   "grade": "🟢 GREEN",
+   "head_sha": "c107ed6",
    "workflows": [
     {
      "name": "Deploy корневого сайта",
-     "conclusion": "failure",
-     "run_number": 30,
-     "url": "https://github.com/rtynbirf/rtynbirf.github.io/actions/runs/42673970803"
+     "conclusion": "success",
+     "run_number": 31,
+     "url": "https://github.com/rtynbirf/rtynbirf.github.io/actions/runs/42691444850"
     }
    ],
    "open_issues": 0,
    "open_prs": 0,
    "dependabot": true,
-   "artifacts_mb": 25.86
+   "artifacts_mb": 32.71
   },
   {
    "repo": "rumu",
@@ -891,14 +813,14 @@
    "repo": "runtime-protocol",
    "archived": false,
    "default_branch": "main",
-   "grade": "🔴 RED ×1",
-   "head_sha": "5b6890b",
+   "grade": "🟢 GREEN",
+   "head_sha": "b159f60",
    "workflows": [
     {
      "name": "metabolism",
-     "conclusion": "failure",
-     "run_number": 36,
-     "url": "https://github.com/rtynbirf/runtime-protocol/actions/runs/42673992728"
+     "conclusion": "success",
+     "run_number": 37,
+     "url": "https://github.com/rtynbirf/runtime-protocol/actions/runs/42691448715"
     }
    ],
    "open_issues": 0,
@@ -935,14 +857,14 @@
    "repo": "ruvson-rse2",
    "archived": false,
    "default_branch": "main",
-   "grade": "🔴 RED ×1",
-   "head_sha": "6d7a9c3",
+   "grade": "🟢 GREEN",
+   "head_sha": "6c2c9d4",
    "workflows": [
     {
      "name": "CI",
-     "conclusion": "failure",
-     "run_number": 28,
-     "url": "https://github.com/rtynbirf/ruvson-rse2/actions/runs/42674037562"
+     "conclusion": "success",
+     "run_number": 29,
+     "url": "https://github.com/rtynbirf/ruvson-rse2/actions/runs/42691454760"
     }
    ],
    "open_issues": 0,
@@ -955,44 +877,44 @@
    "archived": false,
    "default_branch": "rumu",
    "grade": "🔴 RED ×1",
-   "head_sha": "4b91616",
+   "head_sha": "287f8bb",
    "workflows": [
     {
      "name": "Deploy СИНГУЛЯР РУМУ to Pages",
      "conclusion": "success",
-     "run_number": 120,
-     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42690658859"
+     "run_number": 121,
+     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42691459546"
     },
     {
      "name": "OpenSSF Scorecard",
      "conclusion": "success",
-     "run_number": 94,
-     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42690658197"
+     "run_number": 95,
+     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42691460152"
     },
     {
      "name": "Оракулы дома зелёные (sovereign check)",
      "conclusion": "failure",
-     "run_number": 133,
-     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42690657854"
+     "run_number": 135,
+     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42691459952"
     },
     {
      "name": "Такт-гейт (доказательство выпуска)",
      "conclusion": "success",
-     "run_number": 159,
-     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42690658350"
+     "run_number": 160,
+     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42691460104"
     }
    ],
-   "open_issues": 2,
+   "open_issues": 1,
    "open_prs": 0,
    "dependabot": true,
-   "artifacts_mb": 498.87
+   "artifacts_mb": 560.94
   },
   {
    "repo": "singulyar-llm",
    "archived": false,
    "default_branch": "main",
    "grade": "⚪ EMPTY (нет workflow)",
-   "head_sha": "5ab82fa",
+   "head_sha": "88ab6b1",
    "workflows": [],
    "open_issues": 0,
    "open_prs": 0,
@@ -1054,13 +976,13 @@
    "archived": false,
    "default_branch": "main",
    "grade": "🟢 GREEN",
-   "head_sha": "25b7b31",
+   "head_sha": "32532db",
    "workflows": [
     {
      "name": "ci",
      "conclusion": "success",
-     "run_number": 45,
-     "url": "https://github.com/rtynbirf/universal-agent/actions/runs/42685681572"
+     "run_number": 46,
+     "url": "https://github.com/rtynbirf/universal-agent/actions/runs/42691469226"
     }
    ],
    "open_issues": 0,
@@ -1072,14 +994,14 @@
    "repo": "voice-atlas-llm",
    "archived": false,
    "default_branch": "main",
-   "grade": "🔴 RED ×1",
-   "head_sha": "8dbe148",
+   "grade": "🟢 GREEN",
+   "head_sha": "401e1b9",
    "workflows": [
     {
      "name": "CI",
-     "conclusion": "failure",
-     "run_number": 72,
-     "url": "https://github.com/rtynbirf/voice-atlas-llm/actions/runs/42674168888"
+     "conclusion": "success",
+     "run_number": 73,
+     "url": "https://github.com/rtynbirf/voice-atlas-llm/actions/runs/42691475187"
     }
    ],
    "open_issues": 1,
