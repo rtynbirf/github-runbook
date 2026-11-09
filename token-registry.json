@@ -59,6 +59,46 @@
       "expires_at": "2026-12-09",
       "rotated_at": "2026-11-10",
       "note": "Живой ключ волны ×10: проверен /user HTTP 200 (2026-11-10, два прогона), login rtynbirf. Смерть ключа из живого заголовка github-authentication-token-expiration = 2026-12-09T16:49:32 UTC — совпадает с мандатом ×9b ДО СЕКУНДЫ: оба ключа одной выдачи Хозяина (2026-11-09 16:49:32 UTC, окно 30 дней). Скоупы сняты с заголовка X-OAuth-Scopes живого ответа, совпали с ×9b (21 скоуп). Живых классических ключей в реестре = 2; байт ключей здесь нет — только метаданные (env-only). Целевая схема П-74: fine-grained/OIDC — решение Хозяина; часовой остаётся честно красным ×2, гарда не ослабляется."
+    },
+    {
+      "label": "classic rtynbirf · волна ×12 ДЕРЗАЙ 2026-11-10",
+      "kind": "classic",
+      "scopes": [
+        "admin:enterprise",
+        "admin:gpg_key",
+        "admin:org",
+        "admin:org_hook",
+        "admin:public_key",
+        "admin:repo_hook",
+        "admin:ssh_signing_key",
+        "audit_log",
+        "codespace",
+        "copilot",
+        "delete:packages",
+        "delete_repo",
+        "gist",
+        "notifications",
+        "project",
+        "repo",
+        "user",
+        "workflow",
+        "write:discussion",
+        "write:network_configurations",
+        "write:packages"
+      ],
+      "expires_at": "2026-12-09",
+      "rotated_at": "2026-11-10",
+      "note": "Мандат ×12 (проба закона №11: /user HTTP 200, смерть из заголовка github-authentication-token-expiration = 2026-12-09T19:54:31 UTC, 21 скоуп с живого X-OAuth-Scopes — совпал с ×9b/×11 одной выдачи). Волна ×12: пуш главного коммита SLSA L3 (c8a423e→cf1fa90) и ротация CELL_SWARM_DISPATCH_TOKEN ×5 (polymath-os, runtime-protocol, cell-swarm, cell-rs, voice-atlas-llm) через libsodium sealed box — пульс-коммит f6e0779 запушен через новый секрет (живое доказательство ротации). Байт ключа здесь ноль (env-only)."
+    },
+    {
+      "label": "fine-grained rtynbirf · волна ×12 П-74 2026-11-10",
+      "kind": "fine-grained",
+      "scopes": [
+        "granted repos: 36 (admin/maintain/push видно через /user/repos — это роль пользователя, НЕ гранты PAT)"
+      ],
+      "expires_at": "2026-12-09",
+      "rotated_at": "2026-11-10",
+      "note": "Проба закона №11: /user HTTP 200, смерть 2026-12-09T19:58:08 UTC, allows_permissionless_access=true. ЖИВОЕ ВСКРЫТИЕ (Я-факт волны ×12): push в polymath-os → 403 «Permission to rtynbirf/polymath-os.git denied» — /user/repos permissions показывает РОЛЬ ПОЛЬЗОВАТЕЛЯ (admin), а не гранты PAT; Contents:write у токена нет. Вывод П-74: fine-grained без явного Contents:write не заменяет classic для пушей через ruleset-bypass; для перехода — перевыпуск FG с Contents: write (+Actions: write для диспатчей) и повторная проба. Держится как кандидат целевого состояния; в секреты не заливался."
     }
   ]
 }
