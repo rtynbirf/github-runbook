@@ -28,7 +28,37 @@
       ],
       "expires_at": "2026-12-09",
       "rotated_at": "2026-11-09",
-      "note": "Единственный живой классический ключ: живая проба 2026-11-09 (закон №11): /user HTTP 200, login rtynbirf, смерть ключа из заголовка github-authentication-token-expiration = 2026-12-09T16:49:32 UTC, остаток лимита 4876/5000. Предшественники (6ipr…, sFue…) мертвы — ротация каждый мандат. Классика выдаётся Хозяином вручную на мандат; переход на fine-grained по П-74 §2 — решение Хозяина. 🔴-вердикт часового = честная политика-тревога до того решения."
+      "note": "Сверка 2026-11-10 (волна ×10): ключ ЕЩЁ ЖИВ (HTTP 200, login rtynbirf) — ротация ≠ отзыв (Я-11, polimat-hub REPORT/CONCLUSIONS.md). Отозвать Хозяину (Settings → Developer settings → PAT); после честного 401 запись удаляется следующим раундом. Байт ключа в репозиториях/логах не было никогда."
+    },
+    {
+      "label": "classic rtynbirf · волна ПОЛИМАТ 2026-11-10",
+      "kind": "classic",
+      "scopes": [
+        "admin:enterprise",
+        "admin:gpg_key",
+        "admin:org",
+        "admin:org_hook",
+        "admin:public_key",
+        "admin:repo_hook",
+        "admin:ssh_signing_key",
+        "audit_log",
+        "codespace",
+        "copilot",
+        "delete:packages",
+        "delete_repo",
+        "gist",
+        "notifications",
+        "project",
+        "repo",
+        "user",
+        "workflow",
+        "write:discussion",
+        "write:network_configurations",
+        "write:packages"
+      ],
+      "expires_at": null,
+      "rotated_at": "2026-11-10",
+      "note": "Живой ключ текущей волны ×10: проверен /user HTTP 200 (2026-11-10), login rtynbirf, лимит 4724/5000. Скоупы сняты с заголовка X-OAuth-Scopes живого ответа и совпали с предшественником (21 скоуп). Байт ключа в реестре нет — только метаданные (правило env-only). Целевая схема П-74: замена на fine-grained/OIDC — решение Хозяина; часовой остаётся честно красным, гарда не ослабляется."
     }
   ]
 }
