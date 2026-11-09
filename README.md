@@ -1,6 +1,9 @@
 <div align="center">
   <img src="banner.png" alt="github-runbook — Настройка GitHub-репозитория: человеком — для человека" width="100%">
 </div>
+<div align="center">
+  <a href="HIVE-DASHBOARD.md"><img src="HIVE-BADGE.svg" alt="HIVE-CONTROL: живой пульт роя — 42 репо одним взглядом"></a>
+</div>
 
 # GitHub-ранбук: настройка репозитория человеком для человека
 

@@ -1,0 +1,44 @@
+name: hive-control
+
+# 🐝 ЖИВОЙ ПУЛЬТ РОЯ — один прогон снимает здоровье всех репо дома.
+# Мировая практика 2026 (SHA-pin, least-privilege, reusable workflows) уже в доме;
+# этот пульт у мира НЕТ: приватные 42 репо + CI-on-HEAD + артефакты + dependabot
+# одним взглядом. Публикует HIVE-DASHBOARD.md, HIVE-STATE.json, HIVE-BADGE.svg,
+# ведёт append-only hive_ledger.jsonl.
+# [skip ci] в коммите — пульт не заводит сам себя в цикл.
+
+on:
+  schedule:
+    - cron: "30 5 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hive-control
+  cancel-in-progress: false
+
+jobs:
+  hive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Снять пульт роя (fact = байты)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/hive_control.py --quiet
+      - name: Опубликовать дашборд, бейдж и журнал
+        run: |
+          git config user.name "hive-control[bot]"
+          git config user.email "119601232+rtynbirf@users.noreply.github.com"
+          git add HIVE-DASHBOARD.md HIVE-STATE.json HIVE-BADGE.svg hive_ledger.jsonl
+          if git diff --cached --quiet; then
+            echo "данных без изменений — коммита нет (честный ноль)"
+          else
+            git commit -m "hive-control: снимок роя $(date -u +%Y-%m-%dT%H:%MZ) [skip ci] — Волна ×9 · ПОЛИМАТ"
+            git push
+          fi
