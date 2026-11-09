@@ -3,3 +3,7 @@
 {"ts": "2026-11-09T23:33:59.996974+03:00", "action": "classified", "repo": "repo-doctrine", "workflow": "pr-target-guard — brownout-гард аккаунта", "cls": "REAL-RED", "run_id": 42693930316}
 {"ts": "2026-11-09T23:33:59.996974+03:00", "action": "classified", "repo": "repo-doctrine", "workflow": "wave6-t17-manifest-freshness", "cls": "REAL-RED", "run_id": 42693890705}
 {"ts": "2026-11-09T23:33:59.996974+03:00", "action": "classified", "repo": "singulyar", "workflow": "Оракулы дома зелёные (sovereign check)", "cls": "REAL-RED", "run_id": 42691459952}
+{"ts": "2026-11-09T23:38:43.335112+03:00", "action": "classified", "repo": "edinyy-svod", "workflow": "wave3-portability", "cls": "REAL-RED", "run_id": 42693460791}
+{"ts": "2026-11-09T23:38:43.335112+03:00", "action": "classified", "repo": "repo-doctrine", "workflow": "agentic-pilot — Markdown→Actions", "cls": "REAL-RED", "run_id": 42693926308}
+{"ts": "2026-11-09T23:38:43.335112+03:00", "action": "classified", "repo": "repo-doctrine", "workflow": "pr-target-guard — brownout-гард аккаунта", "cls": "REAL-RED", "run_id": 42693930316}
+{"ts": "2026-11-09T23:38:43.335112+03:00", "action": "classified", "repo": "repo-doctrine", "workflow": "wave6-t17-manifest-freshness", "cls": "REAL-RED", "run_id": 42693890705}
