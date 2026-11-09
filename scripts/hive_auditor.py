@@ -115,6 +115,7 @@ def audit_repo(repo):
         "default_branch": repo.get("default_branch") or "",
         "mutable_uses": [],
         "no_permissions": 0,
+        "no_permissions_files": [],
         "pull_request_target": 0,
         "unprotected": False,
         "rulesets": 0,
@@ -142,6 +143,7 @@ def audit_repo(repo):
         res["mutable_uses"].extend(mutable)
         if not hasperm:
             res["no_permissions"] += 1
+            res["no_permissions_files"].append(path)
         if prt:
             res["pull_request_target"] += 1
 

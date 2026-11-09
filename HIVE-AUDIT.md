@@ -1,22 +1,18 @@
 # 🧬 HIVE-AUDIT · РЕВИЗОР-2026 · живой аудит флота
 
-> Последняя ревизия: 2026-11-09T21:45:29Z UTC · тренды: GitHub Actions Security Roadmap 2026 · OpenSSF
+> Последняя ревизия: 2026-11-09T22:00:18Z UTC · тренды: GitHub Actions Security Roadmap 2026 · OpenSSF
 
 | Показатель | Значение |
 |---|---|
 | Репозиториев в аудите | 41 |
-| Средний счёт флота | **99.4/100** |
+| Средний счёт флота | **100.0/100** |
 | Mutable `uses:` (не SHA-40) | 0 |
-| Workflow без `permissions:` | 3 |
+| Workflow без `permissions:` | 0 |
 | Опасный `pull_request_target` | 0 |
-| Default-ветка без защиты (и без rulesets) | 1 |
+| Default-ветка без защиты (и без rulesets) | 0 |
 
 | Репо | Счёт | Грейд | Находки |
 |---|---|---|---|
-| revo | 90 | A | default-ветка без защиты |
-| markitdown | 95 | A | без permissions ×1 |
-| rtynbirf | 95 | A | без permissions ×1 |
-| singulyar-llm | 95 | A | без permissions ×1 |
 | .github | 100 | A+ | — |
 | agryp | 100 | A+ | — |
 | cell-rs | 100 | A+ | — |
@@ -30,6 +26,7 @@
 | H-PE11-PHOENIX | 100 | A+ | — |
 | karaoke-dream | 100 | A+ | — |
 | language-through-the-ages | 100 | A+ | — |
+| markitdown | 100 | A+ | — |
 | neutral-browser | 100 | A+ | — |
 | nous | 100 | A+ | — |
 | os-forge | 100 | A+ | — |
@@ -43,11 +40,14 @@
 | release-vault | 100 | A+ | — |
 | rent-mechanism-q43 | 100 | A+ | — |
 | repo-doctrine | 100 | A+ | — |
+| revo | 100 | A+ | — |
+| rtynbirf | 100 | A+ | — |
 | rtynbirf.github.io | 100 | A+ | — |
 | runtime-protocol | 100 | A+ | — |
 | ruvson-lyrics | 100 | A+ | — |
 | ruvson-rse2 | 100 | A+ | — |
 | singulyar | 100 | A+ | — |
+| singulyar-llm | 100 | A+ | — |
 | task-graph-propagator | 100 | A+ | — |
 | uace-pml | 100 | A+ | — |
 | universal-agent | 100 | A+ | — |

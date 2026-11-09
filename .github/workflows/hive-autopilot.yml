@@ -1,0 +1,42 @@
+name: "🚀 HIVE-AUTOPILOT · самолечение улья"
+
+# Волна ×15: замкнутый цикл самоуправления — ревизор нашёл (§×14) →
+# автопилот вылечил безопасные классы (OSPS AC-03.01 ruleset-primary +
+# AC-04.01 top-level permissions:read) → ревизор тут же пере-ревизует.
+# Только два безопасных класса лечения, идемпотент, append-only ledger.
+
+on:
+  schedule:
+    - cron: "20 6 * * *" # ежедневно 06:20 UTC — после ревизора 05:55
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hive-autopilot
+  cancel-in-progress: false
+
+jobs:
+  heal-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1 — домашний канон SHA-пин
+      - name: "Лечение находок ревизора (только безопасные классы)"
+        env:
+          GH_TOKEN: ${{ secrets.HIVE_TOKEN }}
+          PYTHONIOENCODING: utf-8
+        run: python3 scripts/hive_autopilot.py --apply=true
+      - name: "Пере-ревизия флота (живая верификация лечения)"
+        env:
+          GH_TOKEN: ${{ secrets.HIVE_TOKEN }}
+          PYTHONIOENCODING: utf-8
+        run: python3 scripts/hive_auditor.py
+      - name: "Коммит живых артефактов (append-only ledger)"
+        run: |
+          git config user.name "hive-autopilot[bot]"
+          git config user.email "hive-autopilot[bot]@users.noreply.github.com"
+          git add HIVE-AUDIT.md hive_auditor_ledger.jsonl hive_auditor_state.json hive_autopilot_ledger.jsonl
+          git diff --cached --quiet || git commit -m "автопилот: лечение+пере-ревизия $(date -u +%FT%TZ) [skip ci]"
+          git push
