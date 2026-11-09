@@ -1,0 +1,37 @@
+name: "🧬 HIVE-AUDITOR · ревизор-2026"
+
+# Четвёртый слой роя: живой аудит флота по трендам мировой разведки
+# (GitHub Actions Security Roadmap 2026): SHA-пин uses, минимум привилегий
+# (permissions), опасные триггеры, защита default-ветки. Только репорт:
+# лечение — руками/доктором (закон ревизора). Дедуп-аларм в issue #10.
+
+on:
+  schedule:
+    - cron: "55 5 * * *" # ежедневно 05:55 UTC — после часового sentry 05:40
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: hive-auditor
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1 — домашний канон SHA-пин
+      - name: "Ревизия флота (42 репо)"
+        env:
+          GH_TOKEN: ${{ secrets.HIVE_TOKEN }}
+        run: python3 scripts/hive_auditor.py
+      - name: "Коммит живого аудита (append-only ledger)"
+        run: |
+          git config user.name "hive-auditor[bot]"
+          git config user.email "hive-auditor[bot]@users.noreply.github.com"
+          git add HIVE-AUDIT.md hive_auditor_ledger.jsonl hive_auditor_state.json
+          git diff --cached --quiet || git commit -m "hive-auditor: ревизия улья $(date -u +%FT%TZ) [skip ci]"
+          git push
