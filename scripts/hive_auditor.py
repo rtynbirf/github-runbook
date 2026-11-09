@@ -25,6 +25,7 @@ import os
 import re
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
@@ -104,6 +105,8 @@ def audit_workflow_text(text):
 
 def audit_repo(repo):
     name = repo["name"]
+    # грабля №56: кириллические имена репо/путей в URL ломают urllib (encode ascii)
+    qname = urllib.parse.quote(name, safe="")
     res = {
         "repo": name,
         "private": repo.get("private", False),
@@ -123,13 +126,13 @@ def audit_repo(repo):
         return res
 
     # 1-2-3: workflows
-    st, files = api(f"/repos/{OWNER}/{name}/contents/.github/workflows")
+    st, files = api(f"/repos/{OWNER}/{qname}/contents/.github/workflows")
     wf_names = []
     if st == 200 and isinstance(files, list):
         wf_names = [f["path"] for f in files if f["path"].endswith((".yml", ".yaml"))]
     res["workflows"] = len(wf_names)
     for path in wf_names:
-        req = urllib.request.Request(API + f"/repos/{OWNER}/{name}/contents/{path}")
+        req = urllib.request.Request(API + f"/repos/{OWNER}/{qname}/contents/{urllib.parse.quote(path, safe='/')}")
         req.add_header("Authorization", f"Bearer {TOKEN}")
         req.add_header("Accept", "application/vnd.github.raw")
         req.add_header("User-Agent", "hive-auditor")
@@ -145,8 +148,8 @@ def audit_repo(repo):
     # 4: защита default-ветки + rulesets
     db = res["default_branch"]
     if db:
-        st3, _ = api(f"/repos/{OWNER}/{name}/branches/{db}/protection")
-        st4, rules = api(f"/repos/{OWNER}/{name}/rulesets")
+        st3, _ = api(f"/repos/{OWNER}/{qname}/branches/{urllib.parse.quote(db, safe='')}/protection")
+        st4, rules = api(f"/repos/{OWNER}/{qname}/rulesets")
         res["rulesets"] = len(rules) if (st4 == 200 and isinstance(rules, list)) else 0
         if st3 == 404 and res["rulesets"] == 0:
             res["unprotected"] = True
