@@ -99,6 +99,24 @@ def ensure_ruleset(repo, db):
     return f"HTTP {st}: {d.get('message', 'ошибка')[:80]}"
 
 
+def has_deletion_ruleset(repo):
+    """→ True если есть active-ruleset с запретом удаления (OSPS AC-03.02).
+    Грабля: LIST rulesets НЕ возвращает поле rules — нужен GET каждого ruleset."""
+    q = urllib.parse.quote(repo, safe="")
+    st, rules = api(f"/repos/{H.OWNER}/{q}/rulesets")
+    if st != 200 or not isinstance(rules, list):
+        return False
+    for r in rules:
+        if r.get("enforcement") != "active":
+            continue
+        st2, full = api(f"/repos/{H.OWNER}/{q}/rulesets/{r['id']}")
+        if st2 == 200 and any(
+            x.get("type") == "deletion" for x in full.get("rules", [])
+        ):
+            return True
+    return False
+
+
 def main():
     apply = "--apply=true" in sys.argv
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -111,6 +129,10 @@ def main():
         for p in res["no_permissions_files"]:
             plan.append(("permissions", r["name"], p))
         if res["unprotected"]:
+            plan.append(("ruleset", r["name"], res["default_branch"]))
+        elif not res["empty"] and not r.get("private") and not has_deletion_ruleset(r["name"]):
+            # OSPS AC-03.02: непубличные непустые репо без правил защиты.
+            # Приватные пропускаем: rulesets там платформенно заперты за GitHub Pro (живой 403 §×16).
             plan.append(("ruleset", r["name"], res["default_branch"]))
 
     print(f"🚀 АВТОПИЛОТ {now}: план лечения {len(plan)} позиц.")

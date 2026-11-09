@@ -1,0 +1,37 @@
+name: "🏛 HIVE-OSPS · самооценка флота"
+
+# Шестой слой роя: живая самооценка OSPS Baseline v2026.08.28 Level 1
+# (24 требования) на весь флот. API-факты = VERIFIED, канон улья = ATTEST,
+# приватные отклонения = NA-PRIV (честно). Дедуп-аларм в issue #10.
+
+on:
+  schedule:
+    - cron: "45 6 * * *" # ежедневно 06:45 UTC — после автопилота 06:20
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: hive-osps
+  cancel-in-progress: false
+
+jobs:
+  assess:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1 — домашний канон SHA-пин
+      - name: "OSPS-L1 самооценка флота"
+        env:
+          GH_TOKEN: ${{ secrets.HIVE_TOKEN }}
+          PYTHONIOENCODING: utf-8
+        run: python3 scripts/hive_osps.py
+      - name: "Коммит живого отчёта (append-only ledger)"
+        run: |
+          git config user.name "hive-osps[bot]"
+          git config user.email "hive-osps[bot]@users.noreply.github.com"
+          git add OSPS-BASELINE.md hive_osps_ledger.jsonl hive_osps_state.json
+          git diff --cached --quiet || git commit -m "hive-osps: самооценка флота $(date -u +%FT%TZ) [skip ci]"
+          git push
