@@ -131,6 +131,7 @@ def main():
         row.update(
             grade=grade,
             head_sha=sha[:7],
+            head_sha_full=sha,
             workflows=wfs,
             open_issues=len(issues),
             open_prs=len(pulls),

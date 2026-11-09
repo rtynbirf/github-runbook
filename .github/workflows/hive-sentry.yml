@@ -1,0 +1,44 @@
+name: hive-sentry
+
+# 🫁 HIVE-SENTRY — детерминированный страж-фантомолов роя (дополнение к hive-control).
+# Мировой тренд 2026 self-healing CI лечит вслепую (retry:3 маскирует регрессии) или
+# AI-агентами; startup_failure GitHub вообще не даёт ре-рануть через API (community/207957).
+# SENTRY классифицирует по байтам, без ИИ: PHANTOM (0 jobs или все jobs зелёные) —
+# курс dispatch; REAL-RED — не трогаем, работа для волны; MANUAL — без workflow_dispatch.
+# ≤1 курс на workflow за 24 ч (журнал), ≤10 курсов за смену — без бесконечных петель.
+
+on:
+  schedule:
+    - cron: "40 5 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hive-sentry
+  cancel-in-progress: false
+
+jobs:
+  sentry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Смена стража (fact = байты, классификация без ИИ)
+        env:
+          GH_TOKEN: ${{ secrets.HIVE_TOKEN }}
+        run: python scripts/hive_sentry.py
+      - name: Опубликовать отчёт и журнал смены
+        run: |
+          git config user.name "hive-sentry[bot]"
+          git config user.email "119601232+rtynbirf@users.noreply.github.com"
+          git add SENTRY-REPORT.md hive_sentry_ledger.jsonl
+          if git diff --cached --quiet; then
+            echo "сменный отчёт без изменений — коммита нет (честный ноль)"
+          else
+            git commit -m "hive-sentry: смена $(date -u +%Y-%m-%dT%H:%MZ) [skip ci] — Волна ×9 · ПОЛИМАТ"
+            git push
+          fi
