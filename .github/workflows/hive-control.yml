@@ -29,7 +29,7 @@ jobs:
           python-version: "3.12"
       - name: Снять пульт роя (fact = байты)
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.HIVE_TOKEN }}
         run: python scripts/hive_control.py --quiet
       - name: Опубликовать дашборд, бейдж и журнал
         run: |

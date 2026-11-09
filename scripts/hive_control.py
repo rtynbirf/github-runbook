@@ -62,7 +62,15 @@ def main():
     repos = []
     page = 1
     while True:
-        chunk = api(f"https://api.github.com/user/repos?per_page=100&visibility=all&page={page}", t)
+        try:
+            chunk = api(f"https://api.github.com/user/repos?per_page=100&visibility=all&page={page}", t)
+        except urllib.error.HTTPError as e:
+            sys.exit(
+                f"GET /user/repos → HTTP {e.code}: токен без user-контекста "
+                f"(GITHUB_TOKEN раннера — токен-установка, ему весь дом не виден). "
+                f"Нужен PAT: положи его секретом HIVE_TOKEN в репо и берись "
+                f"env GH_TOKEN: ${{{{ secrets.HIVE_TOKEN }}}}."
+            )
         if not chunk:
             break
         repos.extend(chunk)
