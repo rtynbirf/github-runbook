@@ -1,0 +1,87 @@
+name: swh-save
+# П-28 (polimat-hub#46) / W-AUD-13 (polimat-hub#14): Software Heritage Save Code Now.
+# Пробегает публичные репо rtynbirf, POST /api/1/origin/save/github/url/...,
+# 429 -> backoff 30/60/120 c; результаты — в лог одной JSON-строкой (SWH_RESULTS_JSON=...).
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'probe | sweep'
+        required: true
+        default: 'probe'
+      sleep_s:
+        description: 'пауза между POST, сек'
+        required: false
+        default: '3'
+
+permissions: {}
+
+jobs:
+  swh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: probe
+        if: ${{ inputs.mode == 'probe' }}
+        run: |
+          echo "egress ip: $(curl -s --max-time 10 https://api.ipify.org || echo unknown)"
+          echo "=== POST save-origin (commons) ==="
+          curl -sS --max-time 60 -D - -o /tmp/body.json -X POST \
+            -H 'Accept: application/json' \
+            'https://archive.softwareheritage.org/api/1/origin/save/github/url/https://github.com/rtynbirf/commons/' || true
+          echo "--- body ---"; cat /tmp/body.json; echo
+          echo "=== GET save-status (commons) ==="
+          curl -sS --max-time 60 -o /tmp/body2.json -D /tmp/h2.txt \
+            -H 'Accept: application/json' \
+            'https://archive.softwareheritage.org/api/1/origin/save/github/url/https://github.com/rtynbirf/commons/' || true
+          grep -i 'HTTP/\|ratelimit\|content-type' /tmp/h2.txt || true
+          head -c 600 /tmp/body2.json; echo
+
+      - name: sweep
+        if: ${{ inputs.mode == 'sweep' }}
+        timeout-minutes: 55
+        env:
+          SLEEP_S: ${{ inputs.sleep_s }}
+        run: |
+          python3 - <<'PY'
+          import json, time, urllib.request, urllib.error, datetime
+          USER='rtynbirf'
+          REPOS=[".github","H-PE11-PHOENIX","POLYMATH-ATLAS-GESTALT-CANON","agryp","cell-rs","cell-swarm","cell65-host","combain-v2","commons","domovenok","domovoy-tweaker","edinyy-svod","github-runbook","global-video-platforms-registry","karaoke-dream","language-through-the-ages","markitdown","neutral-browser","nous","os-forge","polimat-hub","polimat-task174","polymat-hive","polymath-atlas","polymath-atlas-v107","polymath-gen","polymath-multiagent","polymath-os","polymath-stckg-core","polymath-tools-atlas","red-thread-debt-audit","release-vault","rent-mechanism-q43","repo-doctrine","revo","rtynbirf","rtynbirf.github.io","runtime-protocol","ruvson-lyrics","ruvson-rse2","singulyar","singulyar-llm","task-graph-propagator","uace-pml","uace-polymat","universal-agent","voice-atlas-llm","web-evolution-1991-2026","windows-chronicle","yazyk-skvoz-epohi","rumu"]
+          SWH='https://archive.softwareheritage.org/api/1/origin/save/github/url/'
+          BACKOFFS=[30,60,120]
+          results=[]
+          for i,repo in enumerate(REPOS,1):
+              origin=f'https://github.com/{USER}/{repo}/'
+              url=SWH+origin
+              ts=datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds')
+              rec={'origin':origin,'request_uid':None,'status':None,'http_code':None,'ts':ts}
+              waits=0
+              def post():
+                  r=urllib.request.Request(url,method='POST',headers={'Accept':'application/json','User-Agent':'rtynbirf-swh-save/1.0 (audit P-28)'})
+                  try:
+                      with urllib.request.urlopen(r,timeout=60) as resp:
+                          body=json.load(resp)
+                          return dict(rec, request_uid=body.get('request_uid'), status=body.get('status'), http_code=resp.status,
+                                      save_request_date=body.get('save_request_date'), visit_status=body.get('visit_status'))
+                  except urllib.error.HTTPError as e:
+                      try: body=json.loads(e.read().decode() or '{}')
+                      except Exception: body={}
+                      return dict(rec, request_uid=body.get('request_uid'), status=body.get('status'), http_code=e.code,
+                                  save_request_date=body.get('save_request_date'), visit_status=body.get('visit_status'))
+              out=post()
+              n=0
+              while out.get('http_code')==429 and n<len(BACKOFFS):
+                  b=BACKOFFS[n]; n+=1; waits+=b
+                  print(f'[{i}/{len(REPOS)}] {repo}: 429, backoff {b}s',flush=True)
+                  time.sleep(b)
+                  out=post()
+              if out.get('http_code')==429 and n>=len(BACKOFFS):
+                  out['status']='backoff_429'; out['backoff_total_s']=waits
+              results.append(out)
+              print(f'[{i}/{len(REPOS)}] {repo}: http={out.get("http_code")} status={out.get("status")} uid={out.get("request_uid")}',flush=True)
+              if i<len(REPOS):
+                  time.sleep(float(__import__('os').environ.get('SLEEP_S','3')))
+          ok=sum(1 for r in results if r.get('status') in ('accepted','already-requested','created'))
+          print('SWH_RESULTS_JSON='+json.dumps(results,ensure_ascii=False),flush=True)
+          print(f'SWH coverage: {ok}/{len(REPOS)} accepted|already-requested',flush=True)
+          PY
