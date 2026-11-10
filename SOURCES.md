@@ -118,3 +118,14 @@
 | A-42 | Лёгкая защита main × 9 | `PUT /repos/{repo}/branches/main/protection` (без PR и проверок, `allow_force_pushes=false`, `allow_deletions=false`) | **200 × 9**; `GET` → `allow_force_pushes.enabled: false` | защита без бюрократии доступна на публичных репо Free |
 
 Пакет исполнения: `hardening-2026-11-10/` (ТЗ, дорожная карта, `tasks.json`, `scripts/hardening.py`).
+
+## 2026-11-10 · Сессия 2: W2 + W2b закрыты, пакет исполнения опубликован (исполнитель: полимат-мультиагент)
+
+| A-№ | Что проверено | Как | Результат | Вывод |
+|---|---|---|---|---|
+| A-43 | Права fine-grained PAT на запись | PUT contents/.github/CODEOWNERS ×5, PUT topics, PUT CITATION.cff | **403** на 5 репо («Resource not accessible by personal access token»), **201** на rtynbirf | fine-grained токен сессии имеет Contents write только на репо rtynbirf; записи на остальные репо — классическим токеном. Для минимальных прав это ожидаемо: скоуп репо задан владельцем |
+| A-44 | Dependabot security updates в combain-v2 | `PUT /repos/rtynbirf/combain-v2/automated-security-fixes` | **204**; GET → `dependabot_security_updates.status=enabled` | R2 ТЗ закрыт полностью |
+| A-45 | CODEOWNERS ×3 | `PUT contents/.github/CODEOWNERS` (combain-v2, polymath-stckg-core, uace-polymat) | **201 ×3**; GET → 200 | R4 закрыт: SECURITY.md + CODEOWNERS + dependabot.yml на месте |
+| A-46 | Topics uace-polymat | `PUT /repos/rtynbirf/uace-polymat/topics` | **200**; GET → 9 тем | темы выведены из README (userscript, tampermonkey, browser-extension, chrome-extension, manifest-v3, cookie-vault, javascript, privacy, offline-first), не выдуманы; R8 частично (лицензия и homepage — за хозяином) |
+| A-47 | CITATION.cff (волна W2b) | `PUT contents/CITATION.cff` ×6: combain-v2, polymath-os, uace-polymat, rtynbirf, polymath-stckg-core, .github | **201 ×6**; остальные 21 из 27 уже существовали и подтверждены live-GET | W2b закрыта: 27/27. У uace-polymat поле license опущено — лицензии в репо нет, не выдумываем |
+| A-48 | Публикация Agent Execution Pack v0.1.0 в polymath-os | ветка `pack/agent-execution-2026-11-10`, commit (DCO) + push + PR | validate_pack PASS (25 файлов, 5 схем), unittest OK, `make verify` 33/33 локально; PR #38 открыт | https://github.com/rtynbirf/polymath-os/pull/38 — оверлей неразрушающий: AGENTS.md дополнен секцией, host PR-шаблон не дублирован; слияние — решение хозяина |
