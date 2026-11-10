@@ -1,0 +1,5 @@
+
+опись: 46 репо · нарушений имён: 0
+правило: kebab-case ^[a-z0-9][a-z0-9-]*$ · FORBIDDEN: polimat-vault, windows-encyclopedia, windows-full-report · бренд-префиксы: microsoft-, apple-, google-, amazon-
+
+rc=0
