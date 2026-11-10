@@ -7,3 +7,10 @@
 {"ts": "2026-11-09T23:38:43.335112+03:00", "action": "classified", "repo": "repo-doctrine", "workflow": "agentic-pilot — Markdown→Actions", "cls": "REAL-RED", "run_id": 42693926308}
 {"ts": "2026-11-09T23:38:43.335112+03:00", "action": "classified", "repo": "repo-doctrine", "workflow": "pr-target-guard — brownout-гард аккаунта", "cls": "REAL-RED", "run_id": 42693930316}
 {"ts": "2026-11-09T23:38:43.335112+03:00", "action": "classified", "repo": "repo-doctrine", "workflow": "wave6-t17-manifest-freshness", "cls": "REAL-RED", "run_id": 42693890705}
+{"ts": "2026-11-10T16:45:38.074295+03:00", "action": "classified", "repo": "nous", "workflow": "ci", "cls": "REAL-RED", "run_id": 42788044361}
+{"ts": "2026-11-10T16:45:38.074295+03:00", "action": "classified", "repo": "nous", "workflow": "forge-linux", "cls": "REAL-RED", "run_id": 42797927017}
+{"ts": "2026-11-10T16:45:38.074295+03:00", "action": "classified", "repo": "nous", "workflow": "guardian-tripwire", "cls": "REAL-RED", "run_id": 42788044034}
+{"ts": "2026-11-10T16:45:38.074295+03:00", "action": "classified", "repo": "nous", "workflow": "wave3-lease-guard", "cls": "REAL-RED", "run_id": 42788043737}
+{"ts": "2026-11-10T16:45:38.074295+03:00", "action": "classified", "repo": "singulyar", "workflow": "Deploy СИНГУЛЯР РУМУ to Pages", "cls": "REAL-RED", "run_id": 42822221907}
+{"ts": "2026-11-10T16:45:38.074295+03:00", "action": "classified", "repo": "yazyk-skvoz-epohi", "workflow": "github_actions in /. - Update #1692983470", "cls": "REAL-RED", "run_id": 42821596569}
+{"ts": "2026-11-10T16:45:38.074295+03:00", "action": "classified", "repo": "yazyk-skvoz-epohi", "workflow": "github_actions in /. - Update #1692983482", "cls": "REAL-RED", "run_id": 42821597464}
