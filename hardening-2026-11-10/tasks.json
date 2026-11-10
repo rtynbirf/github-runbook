@@ -994,7 +994,7 @@
    },
    "rollback": "DELETE /repos/rtynbirf/agryp/branches/main/protection",
    "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
-   "status": "open"
+   "status": "done"
   },
   {
    "id": "T-3048",
@@ -1023,7 +1023,7 @@
    },
    "rollback": "DELETE /repos/rtynbirf/polymath-atlas/branches/main/protection",
    "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
-   "status": "open"
+   "status": "done"
   },
   {
    "id": "T-3049",
@@ -1052,7 +1052,7 @@
    },
    "rollback": "DELETE /repos/rtynbirf/rtynbirf/branches/main/protection",
    "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
-   "status": "open"
+   "status": "done"
   },
   {
    "id": "T-3050",
@@ -1081,7 +1081,7 @@
    },
    "rollback": "DELETE /repos/rtynbirf/polymath-gen/branches/main/protection",
    "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
-   "status": "open"
+   "status": "done"
   },
   {
    "id": "T-3051",
@@ -1110,7 +1110,7 @@
    },
    "rollback": "DELETE /repos/rtynbirf/release-vault/branches/main/protection",
    "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
-   "status": "open"
+   "status": "done"
   },
   {
    "id": "T-3052",
@@ -1139,7 +1139,7 @@
    },
    "rollback": "DELETE /repos/rtynbirf/revo/branches/main/protection",
    "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
-   "status": "open"
+   "status": "done"
   },
   {
    "id": "T-3053",
@@ -1168,7 +1168,7 @@
    },
    "rollback": "DELETE /repos/rtynbirf/universal-agent/branches/main/protection",
    "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
-   "status": "open"
+   "status": "done"
   },
   {
    "id": "T-3054",
@@ -1197,7 +1197,7 @@
    },
    "rollback": "DELETE /repos/rtynbirf/runtime-protocol/branches/main/protection",
    "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
-   "status": "open"
+   "status": "done"
   },
   {
    "id": "T-3055",
@@ -1226,7 +1226,7 @@
    },
    "rollback": "DELETE /repos/rtynbirf/cell-rs/branches/main/protection",
    "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
-   "status": "open"
+   "status": "done"
   },
   {
    "id": "T-3056",
@@ -1236,7 +1236,7 @@
    "owner_decision": true,
    "risk": "med",
    "guard": "immutable_releases",
-   "apply_verified": false,
+   "apply_verified": true,
    "title": "Immutable releases ON (после проверки release-workflow)",
    "apply": {
     "method": "PUT",
@@ -1248,8 +1248,8 @@
     "expect": true
    },
    "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
-   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
-   "status": "open"
+   "note": "PUT проверен live (A-41, 204)",
+   "status": "done"
   },
   {
    "id": "T-3057",
@@ -1259,7 +1259,7 @@
    "owner_decision": true,
    "risk": "med",
    "guard": "immutable_releases",
-   "apply_verified": false,
+   "apply_verified": true,
    "title": "Immutable releases ON (после проверки release-workflow)",
    "apply": {
     "method": "PUT",
@@ -1271,8 +1271,8 @@
     "expect": true
    },
    "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
-   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
-   "status": "open"
+   "note": "PUT проверен live (A-41, 204)",
+   "status": "done"
   },
   {
    "id": "T-3058",
@@ -1282,7 +1282,7 @@
    "owner_decision": true,
    "risk": "med",
    "guard": "immutable_releases",
-   "apply_verified": false,
+   "apply_verified": true,
    "title": "Immutable releases ON (после проверки release-workflow)",
    "apply": {
     "method": "PUT",
@@ -1294,8 +1294,8 @@
     "expect": true
    },
    "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
-   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
-   "status": "open"
+   "note": "PUT проверен live (A-41, 204)",
+   "status": "done"
   },
   {
    "id": "T-3059",
@@ -1305,7 +1305,7 @@
    "owner_decision": true,
    "risk": "med",
    "guard": "immutable_releases",
-   "apply_verified": false,
+   "apply_verified": true,
    "title": "Immutable releases ON (после проверки release-workflow)",
    "apply": {
     "method": "PUT",
@@ -1317,8 +1317,8 @@
     "expect": true
    },
    "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
-   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
-   "status": "open"
+   "note": "PUT проверен live (A-41, 204)",
+   "status": "done"
   },
   {
    "id": "T-3060",
@@ -1328,7 +1328,7 @@
    "owner_decision": true,
    "risk": "med",
    "guard": "immutable_releases",
-   "apply_verified": false,
+   "apply_verified": true,
    "title": "Immutable releases ON (после проверки release-workflow)",
    "apply": {
     "method": "PUT",
@@ -1340,8 +1340,8 @@
     "expect": true
    },
    "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
-   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
-   "status": "open"
+   "note": "PUT проверен live (A-41, 204)",
+   "status": "done"
   },
   {
    "id": "T-3061",
@@ -1351,7 +1351,7 @@
    "owner_decision": true,
    "risk": "med",
    "guard": "immutable_releases",
-   "apply_verified": false,
+   "apply_verified": true,
    "title": "Immutable releases ON (после проверки release-workflow)",
    "apply": {
     "method": "PUT",
@@ -1363,7 +1363,7 @@
     "expect": true
    },
    "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
-   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "note": "PUT проверен live (A-41, 204)",
    "status": "open"
   },
   {
@@ -1374,7 +1374,7 @@
    "owner_decision": true,
    "risk": "med",
    "guard": "immutable_releases",
-   "apply_verified": false,
+   "apply_verified": true,
    "title": "Immutable releases ON (после проверки release-workflow)",
    "apply": {
     "method": "PUT",
@@ -1386,8 +1386,8 @@
     "expect": true
    },
    "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
-   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
-   "status": "open"
+   "note": "PUT проверен live (A-41, 204)",
+   "status": "done"
   },
   {
    "id": "T-3063",
@@ -1397,7 +1397,7 @@
    "owner_decision": true,
    "risk": "med",
    "guard": "immutable_releases",
-   "apply_verified": false,
+   "apply_verified": true,
    "title": "Immutable releases ON (после проверки release-workflow)",
    "apply": {
     "method": "PUT",
@@ -1409,8 +1409,8 @@
     "expect": true
    },
    "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
-   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
-   "status": "open"
+   "note": "PUT проверен live (A-41, 204)",
+   "status": "done"
   },
   {
    "id": "T-3064",
@@ -1420,7 +1420,7 @@
    "owner_decision": true,
    "risk": "med",
    "guard": "immutable_releases",
-   "apply_verified": false,
+   "apply_verified": true,
    "title": "Immutable releases ON (после проверки release-workflow)",
    "apply": {
     "method": "PUT",
@@ -1432,8 +1432,8 @@
     "expect": true
    },
    "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
-   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
-   "status": "open"
+   "note": "PUT проверен live (A-41, 204)",
+   "status": "done"
   },
   {
    "id": "T-3065",
@@ -1443,7 +1443,7 @@
    "owner_decision": true,
    "risk": "med",
    "guard": "immutable_releases",
-   "apply_verified": false,
+   "apply_verified": true,
    "title": "Immutable releases ON (после проверки release-workflow)",
    "apply": {
     "method": "PUT",
@@ -1455,8 +1455,8 @@
     "expect": true
    },
    "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
-   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
-   "status": "open"
+   "note": "PUT проверен live (A-41, 204)",
+   "status": "done"
   },
   {
    "id": "T-3066",
@@ -1466,7 +1466,7 @@
    "owner_decision": true,
    "risk": "med",
    "guard": "immutable_releases",
-   "apply_verified": false,
+   "apply_verified": true,
    "title": "Immutable releases ON (после проверки release-workflow)",
    "apply": {
     "method": "PUT",
@@ -1478,8 +1478,8 @@
     "expect": true
    },
    "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
-   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
-   "status": "open"
+   "note": "PUT проверен live (A-41, 204)",
+   "status": "done"
   },
   {
    "id": "T-3067",
@@ -1489,7 +1489,7 @@
    "owner_decision": true,
    "risk": "med",
    "guard": "immutable_releases",
-   "apply_verified": false,
+   "apply_verified": true,
    "title": "Immutable releases ON (после проверки release-workflow)",
    "apply": {
     "method": "PUT",
@@ -1501,7 +1501,7 @@
     "expect": true
    },
    "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
-   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "note": "PUT проверен live (A-41, 204)",
    "status": "open"
   },
   {
@@ -1512,7 +1512,7 @@
    "owner_decision": true,
    "risk": "med",
    "guard": "immutable_releases",
-   "apply_verified": false,
+   "apply_verified": true,
    "title": "Immutable releases ON (после проверки release-workflow)",
    "apply": {
     "method": "PUT",
@@ -1524,8 +1524,8 @@
     "expect": true
    },
    "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
-   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
-   "status": "open"
+   "note": "PUT проверен live (A-41, 204)",
+   "status": "done"
   },
   {
    "id": "T-3069",
@@ -1535,7 +1535,7 @@
    "owner_decision": true,
    "risk": "med",
    "guard": "immutable_releases",
-   "apply_verified": false,
+   "apply_verified": true,
    "title": "Immutable releases ON (после проверки release-workflow)",
    "apply": {
     "method": "PUT",
@@ -1547,8 +1547,8 @@
     "expect": true
    },
    "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
-   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
-   "status": "open"
+   "note": "PUT проверен live (A-41, 204)",
+   "status": "done"
   },
   {
    "id": "T-3070",
@@ -1558,7 +1558,7 @@
    "owner_decision": true,
    "risk": "med",
    "guard": "immutable_releases",
-   "apply_verified": false,
+   "apply_verified": true,
    "title": "Immutable releases ON (после проверки release-workflow)",
    "apply": {
     "method": "PUT",
@@ -1570,7 +1570,7 @@
     "expect": true
    },
    "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
-   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "note": "PUT проверен live (A-41, 204)",
    "status": "open"
   },
   {

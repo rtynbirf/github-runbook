@@ -116,3 +116,6 @@
 | A-40 | Push protection на архивном rumu | `PATCH /repos/rtynbirf/rumu` | **200**, но статус остаётся `disabled` | PATCH принят, в архиве не применяется |
 
 Пакет исполнения: `hardening-2026-11-10/` (ТЗ, дорожная карта, `tasks.json`, `scripts/hardening.py`).
+
+| A-41 | Immutable releases ON (проба, затем ×11) | `PUT /repos/{repo}/immutable-releases` | **204 × 12**; `GET` → `{enabled: true, enforced_by_owner: false}` | эндпоинт работает на Free-аккаунте для публичных репо; guard (скан workflow на `--clobber`/`release upload`/`release edit`) пройден у 12 репо |
+| A-42 | Лёгкая защита main × 9 | `PUT /repos/{repo}/branches/main/protection` (без PR и проверок, `allow_force_pushes=false`, `allow_deletions=false`) | **200 × 9**; `GET` → `allow_force_pushes.enabled: false` | защита без бюрократии доступна на публичных репо Free |
