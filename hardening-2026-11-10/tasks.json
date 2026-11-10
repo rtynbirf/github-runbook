@@ -1,0 +1,1643 @@
+{
+ "schema": "hardening-tasks/1",
+ "account": "rtynbirf",
+ "generated": "2026-11-10",
+ "tasks": [
+  {
+   "id": "T-1001",
+   "wave": "W1",
+   "repo": "combain-v2",
+   "kind": "api",
+   "status": "done",
+   "title": "Private vulnerability reporting ON",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/combain-v2/private-vulnerability-reporting"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/combain-v2/private-vulnerability-reporting",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-1002",
+   "wave": "W1",
+   "repo": "polymath-atlas",
+   "kind": "api",
+   "status": "done",
+   "title": "Private vulnerability reporting ON",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/polymath-atlas/private-vulnerability-reporting"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-atlas/private-vulnerability-reporting",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-1003",
+   "wave": "W1",
+   "repo": "uace-polymat",
+   "kind": "api",
+   "status": "done",
+   "title": "Private vulnerability reporting ON",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/uace-polymat/private-vulnerability-reporting"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/uace-polymat/private-vulnerability-reporting",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-1004",
+   "wave": "W1",
+   "repo": "rtynbirf",
+   "kind": "api",
+   "status": "done",
+   "title": "Private vulnerability reporting ON",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/rtynbirf/private-vulnerability-reporting"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/rtynbirf/private-vulnerability-reporting",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-1005",
+   "wave": "W1",
+   "repo": "polymath-gen",
+   "kind": "api",
+   "status": "done",
+   "title": "Private vulnerability reporting ON",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/polymath-gen/private-vulnerability-reporting"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-gen/private-vulnerability-reporting",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-1006",
+   "wave": "W1",
+   "repo": "polymath-stckg-core",
+   "kind": "api",
+   "status": "done",
+   "title": "Private vulnerability reporting ON",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/polymath-stckg-core/private-vulnerability-reporting"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-stckg-core/private-vulnerability-reporting",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-1007",
+   "wave": "W1",
+   "repo": "revo",
+   "kind": "api",
+   "status": "done",
+   "title": "Private vulnerability reporting ON",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/revo/private-vulnerability-reporting"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/revo/private-vulnerability-reporting",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-1008",
+   "wave": "W1",
+   "repo": "combain-v2",
+   "kind": "api",
+   "status": "done",
+   "title": "Dependabot alerts ON",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/combain-v2/vulnerability-alerts"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/combain-v2/vulnerability-alerts",
+    "expect_status": 204
+   },
+   "rollback": "DELETE того же пути",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-1009",
+   "wave": "W1",
+   "repo": "polymath-atlas",
+   "kind": "api",
+   "status": "done",
+   "title": "Dependabot alerts ON",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/polymath-atlas/vulnerability-alerts"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-atlas/vulnerability-alerts",
+    "expect_status": 204
+   },
+   "rollback": "DELETE того же пути",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-1010",
+   "wave": "W1",
+   "repo": "polymath-stckg-core",
+   "kind": "api",
+   "status": "done",
+   "title": "Dependabot alerts ON",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/polymath-stckg-core/vulnerability-alerts"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-stckg-core/vulnerability-alerts",
+    "expect_status": 204
+   },
+   "rollback": "DELETE того же пути",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-1011",
+   "wave": "W1",
+   "repo": "combain-v2",
+   "kind": "api",
+   "status": "done",
+   "title": "Secret scanning + push protection ON",
+   "apply": {
+    "method": "PATCH",
+    "path": "/repos/rtynbirf/combain-v2",
+    "body": {
+     "security_and_analysis": {
+      "secret_scanning": {
+       "status": "enabled"
+      },
+      "secret_scanning_push_protection": {
+       "status": "enabled"
+      }
+     }
+    }
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/combain-v2",
+    "key": "security_and_analysis.secret_scanning_push_protection.status",
+    "expect": "enabled"
+   },
+   "rollback": "тот же PATCH со status=disabled",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2012",
+   "wave": "W2",
+   "repo": "combain-v2",
+   "kind": "api",
+   "title": "Dependabot security updates ON",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/combain-v2/automated-security-fixes"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/combain-v2",
+    "key": "security_and_analysis.dependabot_security_updates.status",
+    "expect": "enabled"
+   },
+   "rollback": "DELETE того же пути",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2013",
+   "wave": "W2",
+   "repo": "polymath-atlas",
+   "kind": "put_file",
+   "title": "Добавить SECURITY.md",
+   "apply": {
+    "path": "SECURITY.md",
+    "template": "templates/SECURITY.md",
+    "message": "chore: add SECURITY.md (hardening 2026-11-10)"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-atlas/contents/SECURITY.md",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл коммитом; если main под защитой — через PR",
+   "note": "",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2014",
+   "wave": "W2",
+   "repo": "polymath-atlas",
+   "kind": "put_file",
+   "title": "Добавить .github/dependabot.yml",
+   "apply": {
+    "path": ".github/dependabot.yml",
+    "template": "templates/dependabot.yml",
+    "message": "chore: add .github/dependabot.yml (hardening 2026-11-10)"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-atlas/contents/.github/dependabot.yml",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл коммитом; если main под защитой — через PR",
+   "note": "dependabot.yml: перед записью заменить {{ECOSYSTEM}} по языку репо (см. AGENTS-HARDENING §5)",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2015",
+   "wave": "W2",
+   "repo": "polymath-atlas",
+   "kind": "put_file",
+   "title": "Добавить .github/CODEOWNERS",
+   "apply": {
+    "path": ".github/CODEOWNERS",
+    "template": "templates/CODEOWNERS",
+    "message": "chore: add .github/CODEOWNERS (hardening 2026-11-10)"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-atlas/contents/.github/CODEOWNERS",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл коммитом; если main под защитой — через PR",
+   "note": "",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2016",
+   "wave": "W2",
+   "repo": "combain-v2",
+   "kind": "put_file",
+   "title": "Добавить .github/CODEOWNERS",
+   "apply": {
+    "path": ".github/CODEOWNERS",
+    "template": "templates/CODEOWNERS",
+    "message": "chore: add .github/CODEOWNERS (hardening 2026-11-10)"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/combain-v2/contents/.github/CODEOWNERS",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл коммитом; если main под защитой — через PR",
+   "note": "",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2017",
+   "wave": "W2",
+   "repo": "polymath-stckg-core",
+   "kind": "put_file",
+   "title": "Добавить .github/CODEOWNERS",
+   "apply": {
+    "path": ".github/CODEOWNERS",
+    "template": "templates/CODEOWNERS",
+    "message": "chore: add .github/CODEOWNERS (hardening 2026-11-10)"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-stckg-core/contents/.github/CODEOWNERS",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл коммитом; если main под защитой — через PR",
+   "note": "",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2018",
+   "wave": "W2",
+   "repo": "uace-polymat",
+   "kind": "put_file",
+   "title": "Добавить .github/CODEOWNERS",
+   "apply": {
+    "path": ".github/CODEOWNERS",
+    "template": "templates/CODEOWNERS",
+    "message": "chore: add .github/CODEOWNERS (hardening 2026-11-10)"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/uace-polymat/contents/.github/CODEOWNERS",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл коммитом; если main под защитой — через PR",
+   "note": "",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2019",
+   "wave": "W2",
+   "repo": "uace-polymat",
+   "kind": "api",
+   "title": "Topics: вывести из содержимого репо (не выдумывать)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/uace-polymat/topics",
+    "body": {
+     "names": []
+    },
+    "fill": "агент читает README и пишет 6–10 реальных тем"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/uace-polymat",
+    "key": "topics",
+    "expect_nonempty": true
+   },
+   "rollback": "PUT с прежним списком (пуст)",
+   "risk": "low",
+   "status": "open",
+   "owner_decision": false
+  },
+  {
+   "id": "T-2020",
+   "wave": "W2b",
+   "repo": "cell65-host",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/cell65-host/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2021",
+   "wave": "W2b",
+   "repo": "karaoke-dream",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/karaoke-dream/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2022",
+   "wave": "W2b",
+   "repo": "agryp",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/agryp/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2023",
+   "wave": "W2b",
+   "repo": "combain-v2",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/combain-v2/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2024",
+   "wave": "W2b",
+   "repo": "cell-swarm",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/cell-swarm/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2025",
+   "wave": "W2b",
+   "repo": "polymath-atlas",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-atlas/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2026",
+   "wave": "W2b",
+   "repo": "polymath-os",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-os/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2027",
+   "wave": "W2b",
+   "repo": "uace-polymat",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/uace-polymat/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2028",
+   "wave": "W2b",
+   "repo": "rtynbirf",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/rtynbirf/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2029",
+   "wave": "W2b",
+   "repo": "neutral-browser",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/neutral-browser/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2030",
+   "wave": "W2b",
+   "repo": "polymath-tools-atlas",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-tools-atlas/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2031",
+   "wave": "W2b",
+   "repo": "polymath-gen",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-gen/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2032",
+   "wave": "W2b",
+   "repo": "release-vault",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/release-vault/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2033",
+   "wave": "W2b",
+   "repo": "voice-atlas-llm",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/voice-atlas-llm/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2034",
+   "wave": "W2b",
+   "repo": "singulyar",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/singulyar/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2035",
+   "wave": "W2b",
+   "repo": "polymath-stckg-core",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-stckg-core/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2036",
+   "wave": "W2b",
+   "repo": "domovoy-tweaker",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/domovoy-tweaker/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2037",
+   "wave": "W2b",
+   "repo": "singulyar-llm",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/singulyar-llm/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2038",
+   "wave": "W2b",
+   "repo": "revo",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/revo/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2039",
+   "wave": "W2b",
+   "repo": "universal-agent",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/universal-agent/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2040",
+   "wave": "W2b",
+   "repo": "ruvson-rse2",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/ruvson-rse2/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2041",
+   "wave": "W2b",
+   "repo": "runtime-protocol",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/runtime-protocol/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2042",
+   "wave": "W2b",
+   "repo": "cell-rs",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/cell-rs/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2043",
+   "wave": "W2b",
+   "repo": ".github",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/.github/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2044",
+   "wave": "W2b",
+   "repo": "rtynbirf.github.io",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/rtynbirf.github.io/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2045",
+   "wave": "W2b",
+   "repo": "polymath-atlas-v107",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-atlas-v107/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-2046",
+   "wave": "W2b",
+   "repo": "os-forge",
+   "kind": "put_file",
+   "title": "CITATION.cff из метаданных репо",
+   "apply": {
+    "path": "CITATION.cff",
+    "template": "templates/CITATION.cff.tmpl",
+    "message": "docs: add CITATION.cff (hardening 2026-11-10)",
+    "fill": "title/abstract/url/license — из API репо"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/os-forge/contents/CITATION.cff",
+    "expect_status": 200
+   },
+   "rollback": "удалить файл",
+   "status": "open",
+   "owner_decision": false,
+   "risk": "low"
+  },
+  {
+   "id": "T-3047",
+   "wave": "W3",
+   "repo": "agryp",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "title": "Лёгкая защита main: запрет force-push и удаления (без обязательных PR и проверок)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/agryp/branches/main/protection",
+    "body": {
+     "required_status_checks": null,
+     "enforce_admins": false,
+     "required_pull_request_reviews": null,
+     "restrictions": null,
+     "allow_force_pushes": false,
+     "allow_deletions": false
+    }
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/agryp/branches/main/protection",
+    "key": "allow_force_pushes.enabled",
+    "expect": false
+   },
+   "rollback": "DELETE /repos/rtynbirf/agryp/branches/main/protection",
+   "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
+   "status": "open"
+  },
+  {
+   "id": "T-3048",
+   "wave": "W3",
+   "repo": "polymath-atlas",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "title": "Лёгкая защита main: запрет force-push и удаления (без обязательных PR и проверок)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/polymath-atlas/branches/main/protection",
+    "body": {
+     "required_status_checks": null,
+     "enforce_admins": false,
+     "required_pull_request_reviews": null,
+     "restrictions": null,
+     "allow_force_pushes": false,
+     "allow_deletions": false
+    }
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-atlas/branches/main/protection",
+    "key": "allow_force_pushes.enabled",
+    "expect": false
+   },
+   "rollback": "DELETE /repos/rtynbirf/polymath-atlas/branches/main/protection",
+   "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
+   "status": "open"
+  },
+  {
+   "id": "T-3049",
+   "wave": "W3",
+   "repo": "rtynbirf",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "title": "Лёгкая защита main: запрет force-push и удаления (без обязательных PR и проверок)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/rtynbirf/branches/main/protection",
+    "body": {
+     "required_status_checks": null,
+     "enforce_admins": false,
+     "required_pull_request_reviews": null,
+     "restrictions": null,
+     "allow_force_pushes": false,
+     "allow_deletions": false
+    }
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/rtynbirf/branches/main/protection",
+    "key": "allow_force_pushes.enabled",
+    "expect": false
+   },
+   "rollback": "DELETE /repos/rtynbirf/rtynbirf/branches/main/protection",
+   "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
+   "status": "open"
+  },
+  {
+   "id": "T-3050",
+   "wave": "W3",
+   "repo": "polymath-gen",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "title": "Лёгкая защита main: запрет force-push и удаления (без обязательных PR и проверок)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/polymath-gen/branches/main/protection",
+    "body": {
+     "required_status_checks": null,
+     "enforce_admins": false,
+     "required_pull_request_reviews": null,
+     "restrictions": null,
+     "allow_force_pushes": false,
+     "allow_deletions": false
+    }
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-gen/branches/main/protection",
+    "key": "allow_force_pushes.enabled",
+    "expect": false
+   },
+   "rollback": "DELETE /repos/rtynbirf/polymath-gen/branches/main/protection",
+   "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
+   "status": "open"
+  },
+  {
+   "id": "T-3051",
+   "wave": "W3",
+   "repo": "release-vault",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "title": "Лёгкая защита main: запрет force-push и удаления (без обязательных PR и проверок)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/release-vault/branches/main/protection",
+    "body": {
+     "required_status_checks": null,
+     "enforce_admins": false,
+     "required_pull_request_reviews": null,
+     "restrictions": null,
+     "allow_force_pushes": false,
+     "allow_deletions": false
+    }
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/release-vault/branches/main/protection",
+    "key": "allow_force_pushes.enabled",
+    "expect": false
+   },
+   "rollback": "DELETE /repos/rtynbirf/release-vault/branches/main/protection",
+   "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
+   "status": "open"
+  },
+  {
+   "id": "T-3052",
+   "wave": "W3",
+   "repo": "revo",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "title": "Лёгкая защита main: запрет force-push и удаления (без обязательных PR и проверок)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/revo/branches/main/protection",
+    "body": {
+     "required_status_checks": null,
+     "enforce_admins": false,
+     "required_pull_request_reviews": null,
+     "restrictions": null,
+     "allow_force_pushes": false,
+     "allow_deletions": false
+    }
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/revo/branches/main/protection",
+    "key": "allow_force_pushes.enabled",
+    "expect": false
+   },
+   "rollback": "DELETE /repos/rtynbirf/revo/branches/main/protection",
+   "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
+   "status": "open"
+  },
+  {
+   "id": "T-3053",
+   "wave": "W3",
+   "repo": "universal-agent",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "title": "Лёгкая защита main: запрет force-push и удаления (без обязательных PR и проверок)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/universal-agent/branches/main/protection",
+    "body": {
+     "required_status_checks": null,
+     "enforce_admins": false,
+     "required_pull_request_reviews": null,
+     "restrictions": null,
+     "allow_force_pushes": false,
+     "allow_deletions": false
+    }
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/universal-agent/branches/main/protection",
+    "key": "allow_force_pushes.enabled",
+    "expect": false
+   },
+   "rollback": "DELETE /repos/rtynbirf/universal-agent/branches/main/protection",
+   "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
+   "status": "open"
+  },
+  {
+   "id": "T-3054",
+   "wave": "W3",
+   "repo": "runtime-protocol",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "title": "Лёгкая защита main: запрет force-push и удаления (без обязательных PR и проверок)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/runtime-protocol/branches/main/protection",
+    "body": {
+     "required_status_checks": null,
+     "enforce_admins": false,
+     "required_pull_request_reviews": null,
+     "restrictions": null,
+     "allow_force_pushes": false,
+     "allow_deletions": false
+    }
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/runtime-protocol/branches/main/protection",
+    "key": "allow_force_pushes.enabled",
+    "expect": false
+   },
+   "rollback": "DELETE /repos/rtynbirf/runtime-protocol/branches/main/protection",
+   "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
+   "status": "open"
+  },
+  {
+   "id": "T-3055",
+   "wave": "W3",
+   "repo": "cell-rs",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "title": "Лёгкая защита main: запрет force-push и удаления (без обязательных PR и проверок)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/cell-rs/branches/main/protection",
+    "body": {
+     "required_status_checks": null,
+     "enforce_admins": false,
+     "required_pull_request_reviews": null,
+     "restrictions": null,
+     "allow_force_pushes": false,
+     "allow_deletions": false
+    }
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/cell-rs/branches/main/protection",
+    "key": "allow_force_pushes.enabled",
+    "expect": false
+   },
+   "rollback": "DELETE /repos/rtynbirf/cell-rs/branches/main/protection",
+   "note": "Согласуется с законом аккаунта «force-push запрещён»; перед применением проверить, что никакой workflow роя не делает push --force в эту ветку",
+   "status": "open"
+  },
+  {
+   "id": "T-3056",
+   "wave": "W3",
+   "repo": "cell65-host",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "guard": "immutable_releases",
+   "apply_verified": false,
+   "title": "Immutable releases ON (после проверки release-workflow)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/cell65-host/immutable-releases"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/cell65-host/immutable-releases",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
+   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "status": "open"
+  },
+  {
+   "id": "T-3057",
+   "wave": "W3",
+   "repo": "global-video-platforms-registry",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "guard": "immutable_releases",
+   "apply_verified": false,
+   "title": "Immutable releases ON (после проверки release-workflow)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/global-video-platforms-registry/immutable-releases"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/global-video-platforms-registry/immutable-releases",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
+   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "status": "open"
+  },
+  {
+   "id": "T-3058",
+   "wave": "W3",
+   "repo": "agryp",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "guard": "immutable_releases",
+   "apply_verified": false,
+   "title": "Immutable releases ON (после проверки release-workflow)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/agryp/immutable-releases"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/agryp/immutable-releases",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
+   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "status": "open"
+  },
+  {
+   "id": "T-3059",
+   "wave": "W3",
+   "repo": "combain-v2",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "guard": "immutable_releases",
+   "apply_verified": false,
+   "title": "Immutable releases ON (после проверки release-workflow)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/combain-v2/immutable-releases"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/combain-v2/immutable-releases",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
+   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "status": "open"
+  },
+  {
+   "id": "T-3060",
+   "wave": "W3",
+   "repo": "cell-swarm",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "guard": "immutable_releases",
+   "apply_verified": false,
+   "title": "Immutable releases ON (после проверки release-workflow)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/cell-swarm/immutable-releases"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/cell-swarm/immutable-releases",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
+   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "status": "open"
+  },
+  {
+   "id": "T-3061",
+   "wave": "W3",
+   "repo": "uace-polymat",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "guard": "immutable_releases",
+   "apply_verified": false,
+   "title": "Immutable releases ON (после проверки release-workflow)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/uace-polymat/immutable-releases"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/uace-polymat/immutable-releases",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
+   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "status": "open"
+  },
+  {
+   "id": "T-3062",
+   "wave": "W3",
+   "repo": "polymath-gen",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "guard": "immutable_releases",
+   "apply_verified": false,
+   "title": "Immutable releases ON (после проверки release-workflow)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/polymath-gen/immutable-releases"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-gen/immutable-releases",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
+   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "status": "open"
+  },
+  {
+   "id": "T-3063",
+   "wave": "W3",
+   "repo": "release-vault",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "guard": "immutable_releases",
+   "apply_verified": false,
+   "title": "Immutable releases ON (после проверки release-workflow)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/release-vault/immutable-releases"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/release-vault/immutable-releases",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
+   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "status": "open"
+  },
+  {
+   "id": "T-3064",
+   "wave": "W3",
+   "repo": "voice-atlas-llm",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "guard": "immutable_releases",
+   "apply_verified": false,
+   "title": "Immutable releases ON (после проверки release-workflow)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/voice-atlas-llm/immutable-releases"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/voice-atlas-llm/immutable-releases",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
+   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "status": "open"
+  },
+  {
+   "id": "T-3065",
+   "wave": "W3",
+   "repo": "singulyar",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "guard": "immutable_releases",
+   "apply_verified": false,
+   "title": "Immutable releases ON (после проверки release-workflow)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/singulyar/immutable-releases"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/singulyar/immutable-releases",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
+   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "status": "open"
+  },
+  {
+   "id": "T-3066",
+   "wave": "W3",
+   "repo": "polymath-stckg-core",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "guard": "immutable_releases",
+   "apply_verified": false,
+   "title": "Immutable releases ON (после проверки release-workflow)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/polymath-stckg-core/immutable-releases"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/polymath-stckg-core/immutable-releases",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
+   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "status": "open"
+  },
+  {
+   "id": "T-3067",
+   "wave": "W3",
+   "repo": "domovoy-tweaker",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "guard": "immutable_releases",
+   "apply_verified": false,
+   "title": "Immutable releases ON (после проверки release-workflow)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/domovoy-tweaker/immutable-releases"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/domovoy-tweaker/immutable-releases",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
+   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "status": "open"
+  },
+  {
+   "id": "T-3068",
+   "wave": "W3",
+   "repo": "singulyar-llm",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "guard": "immutable_releases",
+   "apply_verified": false,
+   "title": "Immutable releases ON (после проверки release-workflow)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/singulyar-llm/immutable-releases"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/singulyar-llm/immutable-releases",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
+   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "status": "open"
+  },
+  {
+   "id": "T-3069",
+   "wave": "W3",
+   "repo": "ruvson-rse2",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "guard": "immutable_releases",
+   "apply_verified": false,
+   "title": "Immutable releases ON (после проверки release-workflow)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/ruvson-rse2/immutable-releases"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/ruvson-rse2/immutable-releases",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
+   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "status": "open"
+  },
+  {
+   "id": "T-3070",
+   "wave": "W3",
+   "repo": "commons",
+   "kind": "api",
+   "owner_decision": true,
+   "risk": "med",
+   "guard": "immutable_releases",
+   "apply_verified": false,
+   "title": "Immutable releases ON (после проверки release-workflow)",
+   "apply": {
+    "method": "PUT",
+    "path": "/repos/rtynbirf/commons/immutable-releases"
+   },
+   "verify": {
+    "path": "/repos/rtynbirf/commons/immutable-releases",
+    "key": "enabled",
+    "expect": true
+   },
+   "rollback": "DELETE того же пути (повлияет только на будущие релизы)",
+   "note": "GET проверен live (A-39); PUT/DELETE на этом аккаунте ещё НЕ проверены live — сначала один тест на одном репо и запись в SOURCES.md",
+   "status": "open"
+  },
+  {
+   "id": "T-4071",
+   "wave": "W4",
+   "repo": "*",
+   "kind": "owner",
+   "owner_decision": true,
+   "title": "Отозвать токены, попавшие в чат 2026-11-10 (классический и fine-grained), создать fine-grained с минимальными правами, записать в token-registry.json",
+   "note": "закон аккаунта: токен из чата скомпрометирован; классик выдан с админ-правами, включая delete_repo",
+   "status": "open",
+   "risk": "low"
+  },
+  {
+   "id": "T-4072",
+   "wave": "W4",
+   "repo": "*",
+   "kind": "owner",
+   "owner_decision": true,
+   "title": "Загрузить аватарку вручную: Settings → Profile → Profile picture (avatar-A-fit.png; <1 МБ, крылья внутри круга)",
+   "note": "API профиля картинку не принимает",
+   "status": "open",
+   "risk": "low"
+  },
+  {
+   "id": "T-4073",
+   "wave": "W4",
+   "repo": "*",
+   "kind": "owner",
+   "owner_decision": true,
+   "title": "uace-polymat: выбрать лицензию (у соседей: MIT ×22, Apache-2.0 ×5) и homepage",
+   "note": "решение хозяина; агент лицензию не выбирает",
+   "status": "open",
+   "risk": "low"
+  },
+  {
+   "id": "T-4074",
+   "wave": "W4",
+   "repo": "*",
+   "kind": "owner",
+   "owner_decision": true,
+   "title": "rumu: репо в архиве — настройки безопасности недоступны; решить: оставить архив или разархивировать",
+   "note": "PVR → 422 «Repository must be public and not archived»",
+   "status": "open",
+   "risk": "low"
+  },
+  {
+   "id": "T-4075",
+   "wave": "W4",
+   "repo": "*",
+   "kind": "owner",
+   "owner_decision": true,
+   "title": "Пломба в polimat-hub и строка в карте README про пакет hardening-2026-11-10 (мембранные файлы без пломбы не трогать)",
+   "note": "AGENTS.md github-runbook, «Никогда не делать»",
+   "status": "open",
+   "risk": "low"
+  },
+  {
+   "id": "T-4076",
+   "wave": "W4",
+   "repo": "*",
+   "kind": "agent_design",
+   "owner_decision": false,
+   "title": "Приватные репо ×15: secret scanning на Free недоступен (A-36). Спроектировать замену: проверка токен-паттернов в CI по аналогии с ci.yml runbook; любой сторонний action — по полному SHA, найденному живой проверкой",
+   "note": "не выдумывать SHA",
+   "status": "open",
+   "risk": "low"
+  }
+ ]
+}

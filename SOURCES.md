@@ -102,3 +102,17 @@
 `jobs-probe.sh`, `log-fetch.sh` (дословный лог упавшего шага), `dispatch-retry.sh`,
 `dispatch-check.sh`, `quota-scan.sh` (скан артефактов × 27 реп), `mirror-artifacts.sh`
 (оффлайн-зеркала) — там же.
+
+## E. Сессия 2026-11-10 · аудит аккаунта (дополнение, append-only)
+
+| # | Действие | Endpoint | Ответ | Что доказывает |
+|---|---|---|---|---|
+| A-34 | Проба токена (закон 11) | `GET /user` | **200** + `github-authentication-token-expiration` | токен жив, логин `rtynbirf`, `plan.name=free` |
+| A-35 | PVR × 7 публичных репо | `PUT /repos/{repo}/private-vulnerability-reporting` | **204 × 7**, затем `GET` → `enabled: true` | combain-v2, polymath-atlas, uace-polymat, rtynbirf, polymath-gen, polymath-stckg-core, revo |
+| A-36 | Secret scanning на приватном репо | `PATCH /repos/rtynbirf/edinyy-svod` (`security_and_analysis`) | **422** «Secret scanning is not available for this repository.» | на Free для приватных репо недоступен (блок `security_and_analysis` в ответе пуст) |
+| A-37 | PVR на архивном репо | `PUT /repos/rtynbirf/rumu/private-vulnerability-reporting` | **422** «Repository must be public and not archived» | для архива настройки безопасности закрыты |
+| A-38 | Dependabot alerts × 3; secret scanning + push protection | `PUT …/vulnerability-alerts` · `PATCH /repos/rtynbirf/combain-v2` | **204 × 3** · **200**, статус `enabled` | combain-v2 закрыт; polymath-atlas и polymath-stckg-core получили alerts |
+| A-39 | Статус immutable releases × 30 публичных | `GET /repos/{repo}/immutable-releases` | **200**, `enabled: true` только у polymath-os | чтение работает; PUT/DELETE на аккаунте ещё не проверены |
+| A-40 | Push protection на архивном rumu | `PATCH /repos/rtynbirf/rumu` | **200**, но статус остаётся `disabled` | PATCH принят, в архиве не применяется |
+
+Пакет исполнения: `hardening-2026-11-10/` (ТЗ, дорожная карта, `tasks.json`, `scripts/hardening.py`).

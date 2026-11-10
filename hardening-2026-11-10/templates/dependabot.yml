@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+  # Добавь экосистему репо одной записью (определи по файлам в корне):
+  # pip → requirements.txt / pyproject.toml; npm → package.json; cargo → Cargo.toml
+  - package-ecosystem: "{{ECOSYSTEM}}"
+    directory: "/"
+    schedule:
+      interval: "weekly"
