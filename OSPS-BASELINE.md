@@ -1,24 +1,31 @@
 # 🏛 HIVE-OSPS · Level 1 самооценка флота · OSPS Baseline v2026.08.28
 
-> Ревизия: 2026-11-09T22:29:51Z UTC · 24 требования L1 · вердикты: VERIFIED (API) / ATTEST (самодекларация) / NA-PRIV (честное отклонение приватности) / FAIL (лечить)
+> Ревизия: 2026-11-10T15:14:04Z UTC · 24 требования L1 · вердикты: VERIFIED (API) / ATTEST (самодекларация) / NA-PRIV (честное отклонение приватности) / FAIL (лечить)
 
 | Показатель | Значение |
 |---|---|
-| Репозиториев в самооценке | 42 |
-| Средний L1-покрытие флота | **99.8%** |
-| VERIFIED всего | 608 |
-| ATTEST всего | 336 |
-| FAIL всего | 2 |
-| NA / NA-PRIV (честные отклонения) | 62 |
+| Репозиториев в самооценке | 50 |
+| Средний L1-покрытие флота | **99.1%** |
+| VERIFIED всего | 789 |
+| ATTEST всего | 400 |
+| FAIL всего | 11 |
+| NA / NA-PRIV (честные отклонения) | 0 |
 
 | Репо | L1 | SPDX | Провалы |
 |---|---|---|---|
+| yazyk-skvoz-epohi | 87.5% | NOASSERTION | OSPS-LE-02.01, OSPS-LE-02.02, OSPS-VM-02.01 |
 | neutral-browser | 91.7% | NOASSERTION | OSPS-LE-02.01, OSPS-LE-02.02 |
+| polymath-atlas | 91.7% | NOASSERTION | OSPS-LE-02.01, OSPS-LE-02.02 |
+| domovenok | 95.8% | MIT | OSPS-VM-02.01 |
+| polymat-hive | 95.8% | MIT | OSPS-VM-02.01 |
+| POLYMATH-ATLAS-GESTALT-CANON | 95.8% | MIT | OSPS-VM-02.01 |
+| polymath-multiagent | 95.8% | MIT | OSPS-VM-02.01 |
 | .github | 100.0% | MIT | — |
 | agryp | 100.0% | MIT | — |
 | cell-rs | 100.0% | Apache-2.0 | — |
 | cell-swarm | 100.0% | Apache-2.0 | — |
 | cell65-host | 100.0% | MIT | — |
+| combain-v2 | 100.0% | MIT | — |
 | commons | 100.0% | Apache-2.0 | — |
 | domovoy-tweaker | 100.0% | MIT | — |
 | edinyy-svod | 100.0% | CC-BY-4.0 | — |
@@ -51,6 +58,7 @@
 | singulyar-llm | 100.0% | Apache-2.0 | — |
 | task-graph-propagator | 100.0% | Apache-2.0 | — |
 | uace-pml | 100.0% | MIT | — |
+| uace-polymat | 100.0% | MIT | — |
 | universal-agent | 100.0% | MIT | — |
 | voice-atlas-llm | 100.0% | MIT | — |
 | web-evolution-1991-2026 | 100.0% | CC-BY-4.0 | — |
