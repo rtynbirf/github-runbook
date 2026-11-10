@@ -1,6 +1,6 @@
 name: swh-save
 # П-28 (polimat-hub#46) / W-AUD-13 (polimat-hub#14): Software Heritage Save Code Now.
-# Пробегает публичные репо rtynbirf, POST /api/1/origin/save/github/url/...,
+# Пробегает публичные репо rtynbirf, POST /api/1/origin/save/git/url/...,
 # 429 -> backoff 30/60/120 c; результаты — в лог одной JSON-строкой (SWH_RESULTS_JSON=...).
 on:
   workflow_dispatch:
@@ -28,12 +28,12 @@ jobs:
           echo "=== POST save-origin (commons) ==="
           curl -sS --max-time 60 -D - -o /tmp/body.json -X POST \
             -H 'Accept: application/json' \
-            'https://archive.softwareheritage.org/api/1/origin/save/github/url/https://github.com/rtynbirf/commons/' || true
+            'https://archive.softwareheritage.org/api/1/origin/save/git/url/https://github.com/rtynbirf/commons/' || true
           echo "--- body ---"; cat /tmp/body.json; echo
           echo "=== GET save-status (commons) ==="
           curl -sS --max-time 60 -o /tmp/body2.json -D /tmp/h2.txt \
             -H 'Accept: application/json' \
-            'https://archive.softwareheritage.org/api/1/origin/save/github/url/https://github.com/rtynbirf/commons/' || true
+            'https://archive.softwareheritage.org/api/1/origin/save/git/url/https://github.com/rtynbirf/commons/' || true
           grep -i 'HTTP/\|ratelimit\|content-type' /tmp/h2.txt || true
           head -c 600 /tmp/body2.json; echo
 
@@ -47,7 +47,7 @@ jobs:
           import json, time, urllib.request, urllib.error, datetime
           USER='rtynbirf'
           REPOS=[".github","H-PE11-PHOENIX","POLYMATH-ATLAS-GESTALT-CANON","agryp","cell-rs","cell-swarm","cell65-host","combain-v2","commons","domovenok","domovoy-tweaker","edinyy-svod","github-runbook","global-video-platforms-registry","karaoke-dream","language-through-the-ages","markitdown","neutral-browser","nous","os-forge","polimat-hub","polimat-task174","polymat-hive","polymath-atlas","polymath-atlas-v107","polymath-gen","polymath-multiagent","polymath-os","polymath-stckg-core","polymath-tools-atlas","red-thread-debt-audit","release-vault","rent-mechanism-q43","repo-doctrine","revo","rtynbirf","rtynbirf.github.io","runtime-protocol","ruvson-lyrics","ruvson-rse2","singulyar","singulyar-llm","task-graph-propagator","uace-pml","uace-polymat","universal-agent","voice-atlas-llm","web-evolution-1991-2026","windows-chronicle","yazyk-skvoz-epohi","rumu"]
-          SWH='https://archive.softwareheritage.org/api/1/origin/save/github/url/'
+          SWH='https://archive.softwareheritage.org/api/1/origin/save/git/url/'
           BACKOFFS=[30,60,120]
           results=[]
           for i,repo in enumerate(REPOS,1):
