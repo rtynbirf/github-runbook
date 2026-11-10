@@ -1,11 +1,11 @@
 {
- "timestamp": "10.11.2026 15:52 МСК",
- "repos_total": 49,
+ "timestamp": "10.11.2026 16:41 МСК",
+ "repos_total": 51,
  "green": 43,
- "red": 1,
+ "red": 3,
  "empty": 4,
  "archived": 1,
- "open_issues": 93,
+ "open_issues": 95,
  "reds": [
   {
    "repo": "nous",
@@ -34,23 +34,50 @@
    "conclusion": "failure",
    "run_number": 39,
    "url": "https://github.com/rtynbirf/nous/actions/runs/42788043737"
+  },
+  {
+   "repo": "singulyar",
+   "name": "Deploy СИНГУЛЯР РУМУ to Pages",
+   "conclusion": "failure",
+   "run_number": 128,
+   "url": "https://github.com/rtynbirf/singulyar/actions/runs/42822221907"
+  },
+  {
+   "repo": "yazyk-skvoz-epohi",
+   "name": "github_actions in /. - Update #1692983470",
+   "conclusion": "failure",
+   "run_number": 1,
+   "url": "https://github.com/rtynbirf/yazyk-skvoz-epohi/actions/runs/42821596569"
+  },
+  {
+   "repo": "yazyk-skvoz-epohi",
+   "name": "github_actions in /. - Update #1692983482",
+   "conclusion": "failure",
+   "run_number": 2,
+   "url": "https://github.com/rtynbirf/yazyk-skvoz-epohi/actions/runs/42821597464"
   }
  ],
- "artifacts_mb": 374.78,
+ "artifacts_mb": 498.79,
  "rows": [
   {
    "repo": ".github",
    "archived": false,
    "default_branch": "main",
    "grade": "🟢 GREEN",
-   "head_sha": "5536ff7",
-   "head_sha_full": "5536ff7efdf53a3b1442ec09ea29914fd299dfcb",
+   "head_sha": "3ecf926",
+   "head_sha_full": "3ecf92683aa8f5278f2d5cc2d87de36a62d9c1cf",
    "workflows": [
     {
      "name": "Push on main",
      "conclusion": "success",
-     "run_number": 18,
-     "url": "https://github.com/rtynbirf/.github/actions/runs/42813251033"
+     "run_number": 19,
+     "url": "https://github.com/rtynbirf/.github/actions/runs/42821140593"
+    },
+    {
+     "name": "account-facade",
+     "conclusion": "success",
+     "run_number": 32,
+     "url": "https://github.com/rtynbirf/.github/actions/runs/42822180026"
     }
    ],
    "open_issues": 1,
@@ -63,26 +90,52 @@
    "archived": false,
    "default_branch": "main",
    "grade": "🟢 GREEN",
-   "head_sha": "835c5a2",
-   "head_sha_full": "835c5a225e2e4a0920392c9e2d25e12dd51e806f",
+   "head_sha": "aa101c8",
+   "head_sha_full": "aa101c82428d656a9fddbd628484910eeaf2b56b",
    "workflows": [
     {
      "name": "evidence-chain",
      "conclusion": "success",
-     "run_number": 37,
-     "url": "https://github.com/rtynbirf/H-PE11-PHOENIX/actions/runs/42815623568"
+     "run_number": 38,
+     "url": "https://github.com/rtynbirf/H-PE11-PHOENIX/actions/runs/42819652152"
     },
     {
      "name": "guardian-tripwire",
      "conclusion": "success",
-     "run_number": 106,
-     "url": "https://github.com/rtynbirf/H-PE11-PHOENIX/actions/runs/42815625871"
+     "run_number": 107,
+     "url": "https://github.com/rtynbirf/H-PE11-PHOENIX/actions/runs/42819652099"
     }
    ],
    "open_issues": 1,
    "open_prs": 0,
    "dependabot": true,
    "artifacts_mb": 0.0
+  },
+  {
+   "repo": "POLYMATH-ATLAS-GESTALT-CANON",
+   "archived": false,
+   "default_branch": "main",
+   "grade": "🟢 GREEN",
+   "head_sha": "a959c39",
+   "head_sha_full": "a959c391d08642fbd25cc2421bdd4a6d7c9d215f",
+   "workflows": [
+    {
+     "name": "CANON-AUTOMATON",
+     "conclusion": "success",
+     "run_number": 8,
+     "url": "https://github.com/rtynbirf/POLYMATH-ATLAS-GESTALT-CANON/actions/runs/42825359285"
+    },
+    {
+     "name": "ДОКУМЕНТАЦИЯ",
+     "conclusion": null,
+     "run_number": 2,
+     "url": "https://github.com/rtynbirf/POLYMATH-ATLAS-GESTALT-CANON/actions/runs/42825359299"
+    }
+   ],
+   "open_issues": 1,
+   "open_prs": 0,
+   "dependabot": true,
+   "artifacts_mb": 0.01
   },
   {
    "repo": "agryp",
@@ -159,38 +212,32 @@
    "archived": false,
    "default_branch": "main",
    "grade": "🟢 GREEN",
-   "head_sha": "a4d0b62",
-   "head_sha_full": "a4d0b62b7cd875ec73d52ae894c98b22c7293ddf",
+   "head_sha": "525bab5",
+   "head_sha_full": "525bab5dd954f0ab689154ca26a428d440e53e3a",
    "workflows": [
     {
      "name": "Push on main",
      "conclusion": "success",
-     "run_number": 7,
-     "url": "https://github.com/rtynbirf/cell-swarm/actions/runs/42818757547"
+     "run_number": 8,
+     "url": "https://github.com/rtynbirf/cell-swarm/actions/runs/42821076241"
     },
     {
      "name": "Scorecard analysis",
      "conclusion": "success",
-     "run_number": 5,
-     "url": "https://github.com/rtynbirf/cell-swarm/actions/runs/42818758090"
-    },
-    {
-     "name": "genome-drift — сверка пинов с живыми HEAD",
-     "conclusion": "success",
-     "run_number": 4,
-     "url": "https://github.com/rtynbirf/cell-swarm/actions/runs/42818829574"
+     "run_number": 6,
+     "url": "https://github.com/rtynbirf/cell-swarm/actions/runs/42821076543"
     },
     {
      "name": "metabolism",
      "conclusion": "success",
-     "run_number": 163,
-     "url": "https://github.com/rtynbirf/cell-swarm/actions/runs/42818758013"
+     "run_number": 164,
+     "url": "https://github.com/rtynbirf/cell-swarm/actions/runs/42821076371"
     },
     {
      "name": "wave3-genome-pulse",
      "conclusion": "success",
-     "run_number": 24,
-     "url": "https://github.com/rtynbirf/cell-swarm/actions/runs/42818758072"
+     "run_number": 25,
+     "url": "https://github.com/rtynbirf/cell-swarm/actions/runs/42821076351"
     }
    ],
    "open_issues": 0,
@@ -446,7 +493,7 @@
     },
     {
      "name": "wf-lint — zizmor-храповик (публичное зеркало)",
-     "conclusion": null,
+     "conclusion": "success",
      "run_number": 4,
      "url": "https://github.com/rtynbirf/edinyy-svod/actions/runs/42819234036"
     }
@@ -461,38 +508,14 @@
    "archived": false,
    "default_branch": "main",
    "grade": "🟢 GREEN",
-   "head_sha": "bf84f40",
-   "head_sha_full": "bf84f40115638a6c673ca6742360c97604318d85",
+   "head_sha": "471865a",
+   "head_sha_full": "471865a6b2df4cfe3189a5b4d03be51358de2164",
    "workflows": [
-    {
-     "name": "ci",
-     "conclusion": "success",
-     "run_number": 126,
-     "url": "https://github.com/rtynbirf/github-runbook/actions/runs/42816818865"
-    },
-    {
-     "name": "guardian-tripwire",
-     "conclusion": "success",
-     "run_number": 116,
-     "url": "https://github.com/rtynbirf/github-runbook/actions/runs/42816818903"
-    },
     {
      "name": "hive-control",
      "conclusion": null,
-     "run_number": 4,
-     "url": "https://github.com/rtynbirf/github-runbook/actions/runs/42819243603"
-    },
-    {
-     "name": "hive-doctor",
-     "conclusion": null,
-     "run_number": 3,
-     "url": "https://github.com/rtynbirf/github-runbook/actions/runs/42819251940"
-    },
-    {
-     "name": "wave3-retention-check",
-     "conclusion": "success",
      "run_number": 5,
-     "url": "https://github.com/rtynbirf/github-runbook/actions/runs/42819261102"
+     "url": "https://github.com/rtynbirf/github-runbook/actions/runs/42826513462"
     }
    ],
    "open_issues": 11,
@@ -568,7 +591,7 @@
    "open_issues": 0,
    "open_prs": 0,
    "dependabot": true,
-   "artifacts_mb": 3.09
+   "artifacts_mb": 2.67
   },
   {
    "repo": "language-through-the-ages",
@@ -709,8 +732,8 @@
    "archived": false,
    "default_branch": "main",
    "grade": "⚪ EMPTY (нет workflow)",
-   "head_sha": "a67f57b",
-   "head_sha_full": "a67f57bf4c757119b9ef6e9dbee4d815b44ef730",
+   "head_sha": "a6a84e8",
+   "head_sha_full": "a6a84e8daf21ba2a295c1e26ce376eafb3e4d27b",
    "workflows": [],
    "open_issues": 64,
    "open_prs": 0,
@@ -819,26 +842,26 @@
    "archived": false,
    "default_branch": "main",
    "grade": "🟢 GREEN",
-   "head_sha": "5af0e75",
-   "head_sha_full": "5af0e75c8a7c4edda6cfc23cb3d1cca6c1e9cec5",
+   "head_sha": "307488b",
+   "head_sha_full": "307488b9988155b4b6f0c58afb67b6d1196449d8",
    "workflows": [
     {
      "name": "Push on main",
      "conclusion": "success",
-     "run_number": 4,
-     "url": "https://github.com/rtynbirf/polymath-gen/actions/runs/42814976880"
+     "run_number": 5,
+     "url": "https://github.com/rtynbirf/polymath-gen/actions/runs/42819938444"
     },
     {
      "name": "Scorecard analysis",
      "conclusion": "success",
-     "run_number": 3,
-     "url": "https://github.com/rtynbirf/polymath-gen/actions/runs/42814976373"
+     "run_number": 4,
+     "url": "https://github.com/rtynbirf/polymath-gen/actions/runs/42819938769"
     },
     {
      "name": "ci",
      "conclusion": "success",
-     "run_number": 30,
-     "url": "https://github.com/rtynbirf/polymath-gen/actions/runs/42814976302"
+     "run_number": 31,
+     "url": "https://github.com/rtynbirf/polymath-gen/actions/runs/42819938725"
     }
    ],
    "open_issues": 0,
@@ -851,19 +874,31 @@
    "archived": false,
    "default_branch": "main",
    "grade": "🟢 GREEN",
-   "head_sha": "4c9a5d3",
-   "head_sha_full": "4c9a5d334172e84e264fc15ccdac64e240fce878",
+   "head_sha": "8f6332f",
+   "head_sha_full": "8f6332fb2ba6b1bbbf0e311369e2c2289cd01f3a",
    "workflows": [
     {
      "name": "CI",
      "conclusion": "success",
+     "run_number": 3,
+     "url": "https://github.com/rtynbirf/polymath-multiagent/actions/runs/42821547838"
+    },
+    {
+     "name": "github_actions in /. - Update #1692983324",
+     "conclusion": "success",
      "run_number": 1,
-     "url": "https://github.com/rtynbirf/polymath-multiagent/actions/runs/42819181756"
+     "url": "https://github.com/rtynbirf/polymath-multiagent/actions/runs/42821562124"
+    },
+    {
+     "name": "github_actions in /. - Update #1692983365",
+     "conclusion": "success",
+     "run_number": 2,
+     "url": "https://github.com/rtynbirf/polymath-multiagent/actions/runs/42821568226"
     }
    ],
-   "open_issues": 0,
-   "open_prs": 0,
-   "dependabot": false,
+   "open_issues": 1,
+   "open_prs": 1,
+   "dependabot": true,
    "artifacts_mb": 0.0
   },
   {
@@ -1039,38 +1074,32 @@
    "archived": false,
    "default_branch": "main",
    "grade": "🟢 GREEN",
-   "head_sha": "27af175",
-   "head_sha_full": "27af175a2a6bbb720dec0d5228c797c217c66aec",
+   "head_sha": "8d03e70",
+   "head_sha_full": "8d03e70cb8fcdb66d72b37e6e0a07906e1c6964c",
    "workflows": [
     {
      "name": "guardian-tripwire",
      "conclusion": "success",
-     "run_number": 114,
-     "url": "https://github.com/rtynbirf/repo-doctrine/actions/runs/42817683335"
-    },
-    {
-     "name": "wave3-door-lint",
-     "conclusion": "success",
-     "run_number": 8,
-     "url": "https://github.com/rtynbirf/repo-doctrine/actions/runs/42817223816"
+     "run_number": 118,
+     "url": "https://github.com/rtynbirf/repo-doctrine/actions/runs/42823309080"
     },
     {
      "name": "wave3-immunity-sentry",
      "conclusion": "success",
-     "run_number": 52,
-     "url": "https://github.com/rtynbirf/repo-doctrine/actions/runs/42819226246"
+     "run_number": 56,
+     "url": "https://github.com/rtynbirf/repo-doctrine/actions/runs/42823309102"
     },
     {
      "name": "wave6-t17-manifest-freshness",
      "conclusion": "success",
-     "run_number": 37,
-     "url": "https://github.com/rtynbirf/repo-doctrine/actions/runs/42816853494"
+     "run_number": 41,
+     "url": "https://github.com/rtynbirf/repo-doctrine/actions/runs/42823309101"
     },
     {
      "name": "wave6-t25-empty-file-sentinel",
      "conclusion": "success",
-     "run_number": 37,
-     "url": "https://github.com/rtynbirf/repo-doctrine/actions/runs/42818833424"
+     "run_number": 41,
+     "url": "https://github.com/rtynbirf/repo-doctrine/actions/runs/42823309437"
     }
    ],
    "open_issues": 5,
@@ -1103,26 +1132,26 @@
    "archived": false,
    "default_branch": "main",
    "grade": "🟢 GREEN",
-   "head_sha": "407fe6c",
-   "head_sha_full": "407fe6c10fbc26a95705084c1ec2dc6e875da36b",
+   "head_sha": "f4f6d49",
+   "head_sha_full": "f4f6d49c425a56f5d8f06be15e2c867bbc439cd0",
    "workflows": [
     {
      "name": "Push on main",
      "conclusion": "success",
-     "run_number": 12,
-     "url": "https://github.com/rtynbirf/rtynbirf/actions/runs/42814476969"
+     "run_number": 21,
+     "url": "https://github.com/rtynbirf/rtynbirf/actions/runs/42819915115"
     },
     {
      "name": "Scorecard analysis",
      "conclusion": "success",
-     "run_number": 8,
-     "url": "https://github.com/rtynbirf/rtynbirf/actions/runs/42814476740"
+     "run_number": 17,
+     "url": "https://github.com/rtynbirf/rtynbirf/actions/runs/42819915622"
     },
     {
      "name": "generate snake",
      "conclusion": "success",
-     "run_number": 85,
-     "url": "https://github.com/rtynbirf/rtynbirf/actions/runs/42814476687"
+     "run_number": 94,
+     "url": "https://github.com/rtynbirf/rtynbirf/actions/runs/42819915519"
     }
    ],
    "open_issues": 0,
@@ -1253,45 +1282,45 @@
    "repo": "singulyar",
    "archived": false,
    "default_branch": "rumu",
-   "grade": "🟢 GREEN",
-   "head_sha": "881625f",
-   "head_sha_full": "881625f4961a4e02e0d754e4baa88e83e357f668",
+   "grade": "🔴 RED ×1",
+   "head_sha": "c70b09e",
+   "head_sha_full": "c70b09ea3d715a251669edb54560c849b05ed180",
    "workflows": [
     {
      "name": "Deploy СИНГУЛЯР РУМУ to Pages",
-     "conclusion": "success",
-     "run_number": 126,
-     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42814671451"
+     "conclusion": "failure",
+     "run_number": 128,
+     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42822221907"
     },
     {
      "name": "OpenSSF Scorecard",
      "conclusion": "success",
-     "run_number": 100,
-     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42814671340"
+     "run_number": 101,
+     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42819921097"
     },
     {
      "name": "Push on rumu",
      "conclusion": "success",
-     "run_number": 5,
-     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42814671366"
+     "run_number": 6,
+     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42819921589"
     },
     {
      "name": "Оракулы дома зелёные (sovereign check)",
      "conclusion": "success",
-     "run_number": 147,
-     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42818825748"
+     "run_number": 149,
+     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42821084857"
     },
     {
      "name": "Такт-гейт (доказательство выпуска)",
      "conclusion": "success",
-     "run_number": 166,
-     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42814671321"
+     "run_number": 167,
+     "url": "https://github.com/rtynbirf/singulyar/actions/runs/42819921133"
     }
    ],
    "open_issues": 1,
    "open_prs": 0,
    "dependabot": true,
-   "artifacts_mb": 315.58
+   "artifacts_mb": 439.92
   },
   {
    "repo": "singulyar-llm",
@@ -1452,26 +1481,26 @@
    "archived": false,
    "default_branch": "main",
    "grade": "🟢 GREEN",
-   "head_sha": "d42486f",
-   "head_sha_full": "d42486f76d3c8e74d141c1c28f7e30bcfd8c4c7d",
+   "head_sha": "f575a2d",
+   "head_sha_full": "f575a2dcb75f0c1ef1f8f3b31a77aabf05e5a9ec",
    "workflows": [
     {
      "name": "CI",
      "conclusion": "success",
-     "run_number": 85,
-     "url": "https://github.com/rtynbirf/voice-atlas-llm/actions/runs/42814684083"
+     "run_number": 86,
+     "url": "https://github.com/rtynbirf/voice-atlas-llm/actions/runs/42819928300"
     },
     {
      "name": "Push on main",
      "conclusion": "success",
-     "run_number": 4,
-     "url": "https://github.com/rtynbirf/voice-atlas-llm/actions/runs/42814683962"
+     "run_number": 5,
+     "url": "https://github.com/rtynbirf/voice-atlas-llm/actions/runs/42819928050"
     },
     {
      "name": "Scorecard analysis",
      "conclusion": "success",
-     "run_number": 4,
-     "url": "https://github.com/rtynbirf/voice-atlas-llm/actions/runs/42814684156"
+     "run_number": 5,
+     "url": "https://github.com/rtynbirf/voice-atlas-llm/actions/runs/42819928338"
     }
    ],
    "open_issues": 1,
@@ -1518,6 +1547,38 @@
    "open_prs": 0,
    "dependabot": true,
    "artifacts_mb": 0.0
+  },
+  {
+   "repo": "yazyk-skvoz-epohi",
+   "archived": false,
+   "default_branch": "main",
+   "grade": "🔴 RED ×2",
+   "head_sha": "a18ace0",
+   "head_sha_full": "a18ace02ab749352775fde96912d999b20a01aa4",
+   "workflows": [
+    {
+     "name": "github_actions in /. - Update #1692983470",
+     "conclusion": "failure",
+     "run_number": 1,
+     "url": "https://github.com/rtynbirf/yazyk-skvoz-epohi/actions/runs/42821596569"
+    },
+    {
+     "name": "github_actions in /. - Update #1692983482",
+     "conclusion": "failure",
+     "run_number": 2,
+     "url": "https://github.com/rtynbirf/yazyk-skvoz-epohi/actions/runs/42821597464"
+    },
+    {
+     "name": "pages build and deployment",
+     "conclusion": "success",
+     "run_number": 4,
+     "url": "https://github.com/rtynbirf/yazyk-skvoz-epohi/actions/runs/42821588451"
+    }
+   ],
+   "open_issues": 0,
+   "open_prs": 0,
+   "dependabot": true,
+   "artifacts_mb": 0.07
   }
  ]
 }
