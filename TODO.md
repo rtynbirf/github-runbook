@@ -12,3 +12,7 @@
 ## 3. Что делать следующей волне
 - ✅ ×6: срез считает 42 репо живым API (§8 РЕЕСТРА), открытых 99 (-26 к ×5)
 - мемо-файлы этого репо (TODO/KNOWN_ISSUES) — только добавление; реестровые и отчётные файлы не редактируются волнами
+
+## 4. Волна ×18 (10.11.2026) — дополнение
+- ✅ ×18: рой-будильник (живой dispatch пульта из публичного флагмана) · immutable releases ×141 живым PATCH (вскрытие API) · Security Insights v2.2.0 + CUE-CI 🟢 · dependency-review · триаж #70 (tolerable_risk) · линтер имён (П-34 закрыт, rc=0 на 46) · uace-polymat LICENSE (MIT)
+- ⬜ хвосты: FG перевыпуск (сегодня 19:58 UTC!) · Pro для приватных (immutable + минуты) · auto-triage rules (UI-only) · свежий разрез счётчика 81 (combain-v2 12, polymath-atlas 4, uace-polymat 4…)
