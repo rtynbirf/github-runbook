@@ -1,16 +1,19 @@
 {
- "timestamp": "10.11.2026 00:04 МСК",
- "repos_total": 42,
- "avg_score": 97.3,
+ "timestamp": "10.11.2026 16:47 МСК",
+ "repos_total": 51,
+ "avg_score": 94.8,
  "grades": {
-  "A+": 41
+  "A+": 45,
+  "C": 2,
+  "B": 2,
+  "D": 1
  },
  "reds": [
-  "edinyy-svod",
-  "repo-doctrine",
-  "singulyar"
+  "nous",
+  "singulyar",
+  "yazyk-skvoz-epohi"
  ],
- "open_issues": 94,
+ "open_issues": 95,
  "repos": [
   {
    "repo": ".github",
@@ -18,7 +21,7 @@
    "private": false,
    "fork": false,
    "ci": "🟢",
-   "open_issues": 0,
+   "open_issues": 1,
    "push_days": 0,
    "score": 100,
    "grade": "A+",
@@ -27,10 +30,22 @@
   {
    "repo": "H-PE11-PHOENIX",
    "archived": false,
-   "private": true,
+   "private": false,
    "fork": false,
    "ci": "🟢",
    "open_issues": 1,
+   "push_days": 0,
+   "score": 100,
+   "grade": "A+",
+   "gaps": []
+  },
+  {
+   "repo": "agryp",
+   "archived": false,
+   "private": false,
+   "fork": false,
+   "ci": "🟢",
+   "open_issues": 0,
    "push_days": 0,
    "score": 100,
    "grade": "A+",
@@ -49,7 +64,31 @@
    "gaps": []
   },
   {
+   "repo": "cell-swarm",
+   "archived": false,
+   "private": false,
+   "fork": false,
+   "ci": "🟢",
+   "open_issues": 0,
+   "push_days": 0,
+   "score": 100,
+   "grade": "A+",
+   "gaps": []
+  },
+  {
    "repo": "cell65-host",
+   "archived": false,
+   "private": false,
+   "fork": false,
+   "ci": "🟢",
+   "open_issues": 0,
+   "push_days": 0,
+   "score": 100,
+   "grade": "A+",
+   "gaps": []
+  },
+  {
+   "repo": "combain-v2",
    "archived": false,
    "private": false,
    "fork": false,
@@ -85,12 +124,12 @@
    "gaps": []
   },
   {
-   "repo": "github-runbook",
+   "repo": "edinyy-svod",
    "archived": false,
-   "private": true,
+   "private": false,
    "fork": false,
    "ci": "🟢",
-   "open_issues": 8,
+   "open_issues": 0,
    "push_days": 0,
    "score": 100,
    "grade": "A+",
@@ -121,33 +160,9 @@
    "gaps": []
   },
   {
-   "repo": "language-through-the-ages",
-   "archived": false,
-   "private": true,
-   "fork": false,
-   "ci": "🟢",
-   "open_issues": 0,
-   "push_days": 0,
-   "score": 100,
-   "grade": "A+",
-   "gaps": []
-  },
-  {
    "repo": "neutral-browser",
    "archived": false,
    "private": false,
-   "fork": false,
-   "ci": "🟢",
-   "open_issues": 0,
-   "push_days": 0,
-   "score": 100,
-   "grade": "A+",
-   "gaps": []
-  },
-  {
-   "repo": "nous",
-   "archived": false,
-   "private": true,
    "fork": false,
    "ci": "🟢",
    "open_issues": 0,
@@ -171,7 +186,31 @@
   {
    "repo": "polimat-task174",
    "archived": false,
-   "private": true,
+   "private": false,
+   "fork": false,
+   "ci": "🟢",
+   "open_issues": 0,
+   "push_days": 0,
+   "score": 100,
+   "grade": "A+",
+   "gaps": []
+  },
+  {
+   "repo": "polymath-atlas",
+   "archived": false,
+   "private": false,
+   "fork": false,
+   "ci": "🟢",
+   "open_issues": 0,
+   "push_days": 0,
+   "score": 100,
+   "grade": "A+",
+   "gaps": []
+  },
+  {
+   "repo": "polymath-atlas-v107",
+   "archived": false,
+   "private": false,
    "fork": false,
    "ci": "🟢",
    "open_issues": 0,
@@ -205,6 +244,18 @@
    "gaps": []
   },
   {
+   "repo": "polymath-stckg-core",
+   "archived": false,
+   "private": false,
+   "fork": false,
+   "ci": "🟢",
+   "open_issues": 0,
+   "push_days": 0,
+   "score": 100,
+   "grade": "A+",
+   "gaps": []
+  },
+  {
    "repo": "polymath-tools-atlas",
    "archived": false,
    "private": false,
@@ -219,7 +270,19 @@
   {
    "repo": "red-thread-debt-audit",
    "archived": false,
-   "private": true,
+   "private": false,
+   "fork": false,
+   "ci": "🟢",
+   "open_issues": 0,
+   "push_days": 0,
+   "score": 100,
+   "grade": "A+",
+   "gaps": []
+  },
+  {
+   "repo": "release-vault",
+   "archived": false,
+   "private": false,
    "fork": false,
    "ci": "🟢",
    "open_issues": 0,
@@ -231,7 +294,31 @@
   {
    "repo": "rent-mechanism-q43",
    "archived": false,
-   "private": true,
+   "private": false,
+   "fork": false,
+   "ci": "🟢",
+   "open_issues": 0,
+   "push_days": 0,
+   "score": 100,
+   "grade": "A+",
+   "gaps": []
+  },
+  {
+   "repo": "repo-doctrine",
+   "archived": false,
+   "private": false,
+   "fork": false,
+   "ci": "🟢",
+   "open_issues": 5,
+   "push_days": 0,
+   "score": 100,
+   "grade": "A+",
+   "gaps": []
+  },
+  {
+   "repo": "revo",
+   "archived": false,
+   "private": false,
    "fork": false,
    "ci": "🟢",
    "open_issues": 0,
@@ -279,7 +366,7 @@
   {
    "repo": "ruvson-lyrics",
    "archived": false,
-   "private": true,
+   "private": false,
    "fork": false,
    "ci": "🟢",
    "open_issues": 0,
@@ -301,9 +388,21 @@
    "gaps": []
   },
   {
+   "repo": "singulyar-llm",
+   "archived": false,
+   "private": false,
+   "fork": false,
+   "ci": "🟢",
+   "open_issues": 0,
+   "push_days": 0,
+   "score": 100,
+   "grade": "A+",
+   "gaps": []
+  },
+  {
    "repo": "task-graph-propagator",
    "archived": false,
-   "private": true,
+   "private": false,
    "fork": false,
    "ci": "🟢",
    "open_issues": 0,
@@ -315,10 +414,22 @@
   {
    "repo": "uace-pml",
    "archived": false,
-   "private": true,
+   "private": false,
    "fork": false,
    "ci": "🟢",
    "open_issues": 0,
+   "push_days": 0,
+   "score": 100,
+   "grade": "A+",
+   "gaps": []
+  },
+  {
+   "repo": "uace-polymat",
+   "archived": false,
+   "private": false,
+   "fork": false,
+   "ci": "🟢",
+   "open_issues": 1,
    "push_days": 0,
    "score": 100,
    "grade": "A+",
@@ -351,7 +462,7 @@
   {
    "repo": "web-evolution-1991-2026",
    "archived": false,
-   "private": true,
+   "private": false,
    "fork": false,
    "ci": "🟢",
    "open_issues": 0,
@@ -363,7 +474,7 @@
   {
    "repo": "windows-chronicle",
    "archived": false,
-   "private": true,
+   "private": false,
    "fork": false,
    "ci": "🟢",
    "open_issues": 0,
@@ -373,35 +484,23 @@
    "gaps": []
   },
   {
-   "repo": "agryp",
+   "repo": "github-runbook",
    "archived": false,
    "private": false,
    "fork": false,
-   "ci": "⚪",
-   "open_issues": 0,
+   "ci": "🟢",
+   "open_issues": 11,
    "push_days": 0,
    "score": 90,
    "grade": "A+",
    "gaps": []
   },
   {
-   "repo": "cell-swarm",
+   "repo": "language-through-the-ages",
    "archived": false,
    "private": false,
    "fork": false,
    "ci": "⚪",
-   "open_issues": 0,
-   "push_days": 0,
-   "score": 90,
-   "grade": "A+",
-   "gaps": []
-  },
-  {
-   "repo": "edinyy-svod",
-   "archived": false,
-   "private": true,
-   "fork": false,
-   "ci": "🔴",
    "open_issues": 0,
    "push_days": 0,
    "score": 90,
@@ -421,66 +520,28 @@
    "gaps": []
   },
   {
-   "repo": "polimat-hub",
-   "archived": false,
-   "private": true,
-   "fork": false,
-   "ci": "⚪",
-   "open_issues": 68,
-   "push_days": 0,
-   "score": 90,
-   "grade": "A+",
-   "gaps": []
-  },
-  {
-   "repo": "polymath-atlas-v107",
+   "repo": "nous",
    "archived": false,
    "private": false,
-   "fork": false,
-   "ci": "⚪",
-   "open_issues": 0,
-   "push_days": 0,
-   "score": 90,
-   "grade": "A+",
-   "gaps": []
-  },
-  {
-   "repo": "release-vault",
-   "archived": false,
-   "private": false,
-   "fork": false,
-   "ci": "⚪",
-   "open_issues": 0,
-   "push_days": 0,
-   "score": 90,
-   "grade": "A+",
-   "gaps": []
-  },
-  {
-   "repo": "repo-doctrine",
-   "archived": false,
-   "private": true,
    "fork": false,
    "ci": "🔴",
-   "open_issues": 14,
+   "open_issues": 2,
    "push_days": 0,
    "score": 90,
    "grade": "A+",
    "gaps": []
   },
   {
-   "repo": "revo",
+   "repo": "polimat-hub",
    "archived": false,
    "private": false,
    "fork": false,
-   "ci": "🟢",
-   "open_issues": 0,
+   "ci": "⚪",
+   "open_issues": 64,
    "push_days": 0,
    "score": 90,
    "grade": "A+",
-   "gaps": [
-    "dep"
-   ]
+   "gaps": []
   },
   {
    "repo": "singulyar",
@@ -495,16 +556,81 @@
    "gaps": []
   },
   {
-   "repo": "singulyar-llm",
+   "repo": "domovenok",
+   "archived": false,
+   "private": false,
+   "fork": false,
+   "ci": "🟢",
+   "open_issues": 0,
+   "push_days": 0,
+   "score": 70,
+   "grade": "B",
+   "gaps": [
+    "sec",
+    "co"
+   ]
+  },
+  {
+   "repo": "polymath-multiagent",
+   "archived": false,
+   "private": false,
+   "fork": false,
+   "ci": "🟢",
+   "open_issues": 1,
+   "push_days": 0,
+   "score": 70,
+   "grade": "B",
+   "gaps": [
+    "sec",
+    "co"
+   ]
+  },
+  {
+   "repo": "POLYMATH-ATLAS-GESTALT-CANON",
+   "archived": false,
+   "private": false,
+   "fork": false,
+   "ci": "🟢",
+   "open_issues": 1,
+   "push_days": 0,
+   "score": 60,
+   "grade": "C",
+   "gaps": [
+    "sec",
+    "co"
+   ]
+  },
+  {
+   "repo": "polymat-hive",
    "archived": false,
    "private": false,
    "fork": false,
    "ci": "⚪",
+   "open_issues": 5,
+   "push_days": 0,
+   "score": 60,
+   "grade": "C",
+   "gaps": [
+    "sec",
+    "co"
+   ]
+  },
+  {
+   "repo": "yazyk-skvoz-epohi",
+   "archived": false,
+   "private": false,
+   "fork": false,
+   "ci": "🔴",
    "open_issues": 0,
    "push_days": 0,
-   "score": 90,
-   "grade": "A+",
-   "gaps": []
+   "score": 40,
+   "grade": "D",
+   "gaps": [
+    "sec",
+    "co",
+    "topics",
+    "wf"
+   ]
   },
   {
    "repo": "rumu",
