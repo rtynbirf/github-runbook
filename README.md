@@ -1,6 +1,15 @@
 <div align="center">
   <img src="banner.png" alt="github-runbook — Настройка GitHub-репозитория: человеком — для человека" width="100%">
 </div>
+
+<!--ФОРЖ:МУЗА:НАЧАЛО-->
+<div align="center">
+  <img src="repo-muse.svg" width="100%" alt="Муза github-runbook: картина кузни ПОЛИМАТ, раунд 9" />
+  <br/>
+  <img src="forge-divider.svg" width="62%" alt="разделитель кузни ПОЛИМАТ" />
+</div>
+<!--ФОРЖ:МУЗА:КОНЕЦ-->
+
 <div align="center">
   <a href="HIVE-DASHBOARD.md"><img src="HIVE-BADGE.svg" alt="HIVE-CONTROL: живой пульт роя — 42 репо одним взглядом"></a>
 </div>
@@ -56,3 +65,10 @@ GitHub после создания репозитория предлагает ~
 Три правила выше — исполняемый автомат: **[`domovoy-ritual`](https://github.com/rtynbirf/domovoy-ritual)**.
 Правило 2 (токены в /tmp, стирание — финал сессии) там буквально командой `clean` с guard-ом G6;
 «всё в репе» — пломбой S4 (бандл-дайджест SHA256); ноль уведомлений — таблицей 12 дефолтов устава.
+
+<!--ФОРЖ:ПОДВАЛ-->
+---
+
+<div align="center">
+  <sub>◆ картина и штандарт — ручная ковка <a href="https://github.com/rtynbirf">КУЗНИ ПОЛИМАТ</a> · ЧЕЛОВЕК=АККАУНТ=PID1 ◆</sub>
+</div>
