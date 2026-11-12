@@ -4,11 +4,12 @@
 
 <!--ФОРЖ:МУЗА:НАЧАЛО-->
 <div align="center">
-  <img src="repo-muse.svg" width="100%" alt="Муза github-runbook: картина кузни ПОЛИМАТ, раунд 9" />
+  <img src="repo-muse.svg" width="100%" alt="Муза github-runbook: мастерская ЧЕРТЁЖ-РУНБУК, кузня ПОЛИМАТ, раунд 11" />
   <br/>
-  <img src="forge-divider.svg" width="62%" alt="разделитель кузни ПОЛИМАТ" />
+  <img src="forge-divider.svg" width="62%" alt="делитель мастерской ЧЕРТЁЖ-РУНБУК" />
 </div>
 <!--ФОРЖ:МУЗА:КОНЕЦ-->
+
 
 <div align="center">
   <a href="HIVE-DASHBOARD.md"><img src="HIVE-BADGE.svg" alt="HIVE-CONTROL: живой пульт роя — 42 репо одним взглядом"></a>
