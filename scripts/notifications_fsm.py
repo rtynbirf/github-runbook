@@ -83,8 +83,16 @@ def scan_all(max_pages=40):
         page += 1
     return list(seen.values())
 
+def load_last_run():
+    """Время последнего прогона из state-файла (skip done-нитей)."""
+    try:
+        return json.load(open(STATE_F, encoding="utf-8")).get("last_run")
+    except Exception:
+        return None
+
 def main():
     t0 = time.time()
+    last_run = load_last_run()
     dry_run = "--dry-run" in sys.argv
     if dry_run:
         items = scan_all()
@@ -110,6 +118,11 @@ def main():
             break
         keep_ids, close = [], []
         for i in items:
+            # done-нити навсегда остаются в all=true-листинге API (факт 2026-11-18:
+            # повторный DELETE даёт 204) — пропускаем всё, что уже обработано
+            # последним прогоном: updated_at <= last_run и не unread
+            if last_run and not i.get("unread") and (i.get("updated_at") or "") <= last_run:
+                continue
             v = triage(i, cache)
             if v == "KEEP":
                 keep_ids.append(i["id"]); stats["kept"] += 1
