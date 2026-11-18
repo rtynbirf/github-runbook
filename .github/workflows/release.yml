@@ -16,7 +16,10 @@ jobs:
       - name: GitHub Release с автозаметками
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" --generate-notes --title "Релиз $GITHUB_REF_NAME"
+        run: |
+          gh release view "$GITHUB_REF_NAME" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1 && \
+            echo "релиз $GITHUB_REF_NAME уже существует — пульс зелёный (idempotent)" || \
+            gh release create "$GITHUB_REF_NAME" --generate-notes --title "Релиз $GITHUB_REF_NAME"
 
   heartbeat:
     name: Зелёный пульс (диспатч без тега — штатное ожидание релиза)
