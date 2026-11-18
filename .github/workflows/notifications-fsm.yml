@@ -1,0 +1,63 @@
+name: "🔔 NOTIFICATIONS-FSM · автопилот инбокса"
+
+# ТЕОРИЯ КОНЕЧНЫХ АВТОМАТОВ (приказ «ПЕРЕВОДИТЬ ВСЁ И ВСЯ НА АВТОМАТ»):
+#   S0 SCAN -> S1 TRIAGE -> S2 CLOSE -> S3 VERIFY -> S4 DONE; из S3 при остатках -> S0.
+#   δ детерминирована, операции идемпотентны (DELETE 404 = успех), остановка гарантирована
+#   (макс. 4 раунда). Политика: всё, что шлёт рой/боты (ci_activity, dependabot, state_change,
+#   comment), закрывается; review_requested от живого человека остаётся (KEEP → exit 2, таблица).
+# Причина существования: 2026-11-17/18 — 1039 нитей за ~10 ч (84% ci_activity) от пушей
+# пчелиного роя токеном владельца. Sweep вручную + этот автомат = инбокс всегда чист.
+
+on:
+  schedule:
+    - cron: "*/30 * * * *" # каждые 30 минут — дожим до нуля
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "только SCAN+TRIAGE, ничего не закрывать"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: notifications-fsm
+  cancel-in-progress: false
+
+jobs:
+  fsm-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1 — домашний канон SHA-пин
+
+      - name: "FSM прогон: SCAN→TRIAGE→CLOSE→VERIFY"
+        env:
+          GH_TOKEN: ${{ secrets.HIVE_TOKEN }}
+          DRY_RUN: ${{ github.event.inputs.dry_run == 'true' }}
+          PYTHONIOENCODING: utf-8
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            echo "DRY_RUN: показываю, что было бы закрыто"
+            python3 scripts/notifications_fsm.py --dry-run || true
+          else
+            python3 scripts/notifications_fsm.py
+            code=$?
+            echo "exit=$code"
+            test $code -ne 2 || echo "KEEP>0: есть KEEP-нити — см. леджер"
+            exit 0
+          fi
+
+      - name: "Коммит леджера (append-only)"
+        run: |
+          git config user.name "notifications-fsm[bot]"
+          git config user.email "notifications-fsm[bot]@users.noreply.github.com"
+          git add notifications_fsm_ledger.jsonl notifications_fsm_state.json || true
+          if git diff --cached --quiet; then
+            echo "нет изменений — леджер уже актуален (идемпотентность)"
+          else
+            git commit -m "🔔 FSM-прогон: инбокс дожат до нуля — append-only леджер [skip ci]"
+            git pull --rebase origin main
+            git push origin main
+          fi

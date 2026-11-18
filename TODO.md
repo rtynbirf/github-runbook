@@ -16,3 +16,7 @@
 ## 4. Волна ×18 (10.11.2026) — дополнение
 - ✅ ×18: рой-будильник (живой dispatch пульта из публичного флагмана) · immutable releases ×141 живым PATCH (вскрытие API) · Security Insights v2.2.0 + CUE-CI 🟢 · dependency-review · триаж #70 (tolerable_risk) · линтер имён (П-34 закрыт, rc=0 на 46) · uace-polymat LICENSE (MIT)
 - ⬜ хвосты: FG перевыпуск (сегодня 19:58 UTC!) · Pro для приватных (immutable + минуты) · auto-triage rules (UI-only) · свежий разрез счётчика 81 (combain-v2 12, polymath-atlas 4, uace-polymat 4…)
+
+## 5. Волна ×23 (18.11.2026) — FSM-кампания уведомлений
+- ✅ ×23: инбокс-флуд диагностирован байтами (1039+ нитей/10ч, 84–92% ci_activity от пушей роя токеном владельца) · FSM-sweep съел инбокс идемпотентно (DELETE 204/404) · dependabot-машина обезврежена: open-pull-requests-limit:0 в uace(`372ed0e`) и index(`aa823359`), 3 PR закрыты самим dependabot · верб Н-8 ЗАКРЫТ исполнением · верб А6-4 честно ЗАМОРОЖЕН (0 байт, дедлайн 14-12 в МАСТЕР-ИНДЕКСЕ) · МАСТЕР-ИНДЕКС создан: МАСТЕР-ИНДЕКС-РЕЕСТРОВ-2026-11-18.md · постоянный FSM-автопилот: scripts/notifications_fsm.py + .github/workflows/notifications-fsm.yml (cron */30 + dispatch, леджер append-only)
+- ⬜ хвосты: финальная верификация нуля после rate-limit reset · (по желанию Хозяина) веб-галочка «Only notify for failed workflow runs» — API недоступна
