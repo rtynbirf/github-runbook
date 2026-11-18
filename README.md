@@ -1,18 +1,18 @@
 <div align="center">
-  <img src="banner.png" alt="github-runbook — Настройка GitHub-репозитория: человеком — для человека" width="100%">
+  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/github-runbook@main/banner.png" alt="github-runbook — Настройка GitHub-репозитория: человеком — для человека" width="100%">
 </div>
 
 <!--ФОРЖ:МУЗА:НАЧАЛО-->
 <div align="center">
-  <img src="repo-muse.svg" width="100%" alt="Муза github-runbook: мастерская ЧЕРТЁЖ-РУНБУК, кузня ПОЛИМАТ, раунд 12 · REVE=РЕВО" />
+  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/github-runbook@main/repo-muse.svg" width="100%" alt="Муза github-runbook: мастерская ЧЕРТЁЖ-РУНБУК, кузня ПОЛИМАТ, раунд 12 · REVE=РЕВО" />
   <br/>
-  <img src="forge-divider.svg" width="62%" alt="делитель мастерской ЧЕРТЁЖ-РУНБУК" />
+  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/github-runbook@main/forge-divider.svg" width="62%" alt="делитель мастерской ЧЕРТЁЖ-РУНБУК" />
 </div>
 <!--ФОРЖ:МУЗА:КОНЕЦ-->
 
 <!--ФОРЖ:ПАСПОРТ:НАЧАЛО-->
 <div align="center">
-  <img src="revo-page.svg" width="100%" alt="РЕВО-паспорт страницы github-runbook: строение файлов, лексикон, числа — по фактическому контенту" />
+  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/github-runbook@main/revo-page.svg" width="100%" alt="РЕВО-паспорт страницы github-runbook: строение файлов, лексикон, числа — по фактическому контенту" />
 </div>
 
 | ФАЙЛОВ | ПАПОК | КОММИТОВ | ОБНОВЛЕНО | РЕЛИЗОВ |
@@ -22,7 +22,7 @@
 
 
 <div align="center">
-  <a href="HIVE-DASHBOARD.md"><img src="HIVE-BADGE.svg" alt="HIVE-CONTROL: живой пульт роя — 42 репо одним взглядом"></a>
+  <a href="HIVE-DASHBOARD.md"><img src="https://cdn.jsdelivr.net/gh/rtynbirf/github-runbook@main/HIVE-BADGE.svg" alt="HIVE-CONTROL: живой пульт роя — 42 репо одним взглядом"></a>
 </div>
 
 # GitHub-ранбук: настройка репозитория человеком для человека
