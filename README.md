@@ -1,5 +1,7 @@
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/github-runbook@main/banner.png" alt="github-runbook — Настройка GitHub-репозитория: человеком — для человека" width="100%">
+
+<a href="https://github.com/rtynbirf/github-runbook"><img src="banner.png" width="100%" alt="github-runbook — штандарт мастерской в каноне ORNAMENTAL MYTHO-REALISM"></a>
+
 </div>
 
 <!--ФОРЖ:МУЗА:НАЧАЛО-->
@@ -12,13 +14,25 @@
 
 <!--ФОРЖ:ПАСПОРТ:НАЧАЛО-->
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/github-runbook@main/revo-page.svg" width="100%" alt="РЕВО-паспорт страницы github-runbook: строение файлов, лексикон, числа — по фактическому контенту" />
+  <img src="revo-page.svg" width="100%" alt="РЕВО-паспорт страницы github-runbook №29 в каноне ORNAMENTAL MYTHO-REALISM: орнаментальная решётка, медальон-миф, строение файлов, лексикон — по фактическому контенту" />
 </div>
 
 | ФАЙЛОВ | ПАПОК | КОММИТОВ | ОБНОВЛЕНО | РЕЛИЗОВ |
 |---:|---:|---:|---|---:|
-| 132 | 11 | 182 | 2026-11-18 | 1 |
+| 142 | 12 | 1 | 2026-11-28 | 1 |
 <!--ФОРЖ:ПАСПОРТ:КОНЕЦ-->
+
+# github-runbook
+
+<p align="center"><img src="https://cdn.jsdelivr.net/gh/rtynbirf/github-runbook@main/.github/social-preview.png" alt="github-runbook" width="100%"></p>
+
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/github-runbook@main/banner.png" alt="github-runbook — Настройка GitHub-репозитория: человеком — для человека" width="100%">
+</div>
+
+
+
+
 
 
 <div align="center">
