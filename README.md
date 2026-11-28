@@ -24,6 +24,18 @@
 
 # github-runbook
 
+<div align="center">
+
+<a href="https://github.com/rtynbirf/github-runbook"><img src="banner.png" width="100%" alt="github-runbook — штандарт мастерской в каноне ORNAMENTAL MYTHO-REALISM"></a>
+
+</div>
+
+
+
+
+
+# github-runbook
+
 <p align="center"><img src="https://cdn.jsdelivr.net/gh/rtynbirf/github-runbook@main/.github/social-preview.png" alt="github-runbook" width="100%"></p>
 
 <div align="center">
